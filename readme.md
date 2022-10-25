@@ -1,17 +1,11 @@
-#Fall 2022, Cal Poly Pomona 
+# Fall 2022, Masters CS, Cal Poly Pomona 
 
-Team X Advanced Software Engineering Project
+## Team X Advanced Software Engineering Project - BRIC
 
-BRIC
+### Team Members:
 
-Team Members:
-
-Madhurima Budugu
-
-Malem Thokchom
-
-Priyatham Sai Chand Bazaru
-
-Rahul Nagarajan
-
-Siva Charan Mallena
+- Madhurima Budugu
+- Malem Thokchom
+- Priyatham Sai Chand Bazaru
+- Rahul Nagarajan
+- Siva Charan Mallena
