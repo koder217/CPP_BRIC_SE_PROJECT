@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="f021bbf7-0a0d-4a70-aada-f67ae5ccf5ea" name="brcm" url="jdbc:postgresql://localhost/brcm" driverClass="org.postgresql.Driver" />
+    </data-sources>
+    <data-source-infos>
+      <data-source-info id="f021bbf7-0a0d-4a70-aada-f67ae5ccf5ea" persistence-unit-name="brcm" />
+    </data-source-infos>
+  </component>
+</project>
