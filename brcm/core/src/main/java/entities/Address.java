@@ -10,22 +10,22 @@ public class Address {
     private Integer id;
 
     @Lob
-    @Column(name = "street", nullable = false)
+    @Column(name = "street")
     private String street;
 
     @Lob
-    @Column(name = "number", nullable = false)
+    @Column(name = "number")
     private String number;
 
-    @Column(name = "zipcode", nullable = false)
+    @Column(name = "zipcode")
     private Integer zipcode;
 
     @Lob
-    @Column(name = "city", nullable = false)
+    @Column(name = "city")
     private String city;
 
     @Lob
-    @Column(name = "state", nullable = false)
+    @Column(name = "state")
     private String state;
 
     public Integer getId() {

@@ -13,7 +13,7 @@ public class Student {
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id", nullable = false)
-    private Customer customers;
+    private Customer customer;
 
     @Column(name = "enterdate", nullable = false)
     private LocalDate enterdate;
@@ -37,12 +37,12 @@ public class Student {
         this.id = id;
     }
 
-    public Customer getCustomers() {
-        return customers;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomers(Customer customers) {
-        this.customers = customers;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public LocalDate getEnterdate() {

@@ -1,9 +1,6 @@
 package entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
@@ -24,6 +21,10 @@ public class Appointment {
 
     @Column(name = "customerid", nullable = false)
     private Integer customerid;
+
+    @Lob
+    @Column(name = "status")
+    private String status;
 
     public Integer getId() {
         return id;
@@ -63,6 +64,14 @@ public class Appointment {
 
     public void setCustomerid(Integer customerid) {
         this.customerid = customerid;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 }

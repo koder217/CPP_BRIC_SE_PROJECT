@@ -12,7 +12,7 @@ public class Professor {
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id", nullable = false)
-    private Customer customers;
+    private Customer customer;
 
     @Lob
     @Column(name = "department", nullable = false)
@@ -34,12 +34,12 @@ public class Professor {
         this.id = id;
     }
 
-    public Customer getCustomers() {
-        return customers;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomers(Customer customers) {
-        this.customers = customers;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public String getDepartment() {

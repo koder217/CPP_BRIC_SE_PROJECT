@@ -10,20 +10,20 @@ public class Discountscheme {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "pricediscount", nullable = false)
+    @Column(name = "pricediscount")
     private Double pricediscount;
 
-    @Column(name = "percentdiscount", nullable = false)
+    @Column(name = "percentdiscount")
     private Double percentdiscount;
 
     @Lob
-    @Column(name = "customertype", nullable = false)
+    @Column(name = "customertype")
     private String customertype;
 
-    @Column(name = "startdate", nullable = false)
+    @Column(name = "startdate")
     private LocalDate startdate;
 
-    @Column(name = "enddate", nullable = false)
+    @Column(name = "enddate")
     private LocalDate enddate;
 
     public Integer getId() {

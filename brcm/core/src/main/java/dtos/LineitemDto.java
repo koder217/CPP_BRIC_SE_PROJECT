@@ -1,7 +1,5 @@
 package dtos;
 
-import entities.Lineitem;
-
 import java.io.Serializable;
 
 /**

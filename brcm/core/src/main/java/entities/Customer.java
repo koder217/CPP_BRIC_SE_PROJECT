@@ -15,14 +15,14 @@ public class Customer {
     private String firstname;
 
     @Lob
-    @Column(name = "lastname", nullable = false)
+    @Column(name = "lastname")
     private String lastname;
 
-    @Column(name = "dateofbirth", nullable = false)
+    @Column(name = "dateofbirth")
     private LocalDate dateofbirth;
 
     @Lob
-    @Column(name = "phone", nullable = false)
+    @Column(name = "phone")
     private String phone;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
