@@ -1,19 +1,20 @@
 
-CREATE SEQUENCE brcm.appointments_id_seq;
+CREATE SEQUENCE appointments_id_seq;
 
-CREATE TABLE brcm.Appointments (
-                id INTEGER NOT NULL DEFAULT nextval('brcm.appointments_id_seq'),
+CREATE TABLE Appointments (
+                id INTEGER NOT NULL DEFAULT nextval('appointments_id_seq'),
                 StartTime TIMESTAMP NOT NULL,
                 EndTime TIMESTAMP NOT NULL,
                 ActivityId INTEGER NOT NULL,
                 CustomerId INTEGER NOT NULL,
+                status VARCHAR,
                 CONSTRAINT appointments_pk PRIMARY KEY (id)
 );
 
 
-ALTER SEQUENCE brcm.appointments_id_seq OWNED BY brcm.Appointments.id;
+ALTER SEQUENCE appointments_id_seq OWNED BY Appointments.id;
 
-CREATE TABLE brcm.Activities (
+CREATE TABLE Activities (
                 id INTEGER NOT NULL,
                 Name VARCHAR NOT NULL,
                 Price DOUBLE PRECISION NOT NULL,
@@ -21,7 +22,7 @@ CREATE TABLE brcm.Activities (
 );
 
 
-CREATE TABLE brcm.HistoricalPrice (
+CREATE TABLE HistoricalPrice (
                 id INTEGER NOT NULL,
                 Date DATE NOT NULL,
                 Price DOUBLE PRECISION NOT NULL,
@@ -30,44 +31,44 @@ CREATE TABLE brcm.HistoricalPrice (
 );
 
 
-CREATE TABLE brcm.DiscountScheme (
+CREATE TABLE DiscountScheme (
                 id INTEGER NOT NULL,
-                PriceDiscount DOUBLE PRECISION NOT NULL,
-                PercentDiscount DOUBLE PRECISION NOT NULL,
-                CustomerType VARCHAR NOT NULL,
-                StartDate DATE NOT NULL,
-                EndDate DATE NOT NULL,
+                PriceDiscount DOUBLE PRECISION,
+                PercentDiscount DOUBLE PRECISION,
+                CustomerType VARCHAR,
+                StartDate DATE,
+                EndDate DATE,
                 CONSTRAINT discountscheme_pk PRIMARY KEY (id)
 );
 
 
-CREATE SEQUENCE brcm.addresses_id_seq;
+CREATE SEQUENCE addresses_id_seq;
 
-CREATE TABLE brcm.Addresses (
-                id INTEGER NOT NULL DEFAULT nextval('brcm.addresses_id_seq'),
-                Street VARCHAR NOT NULL,
-                Number VARCHAR NOT NULL,
-                ZipCode INTEGER NOT NULL,
-                City VARCHAR NOT NULL,
-                State VARCHAR NOT NULL,
+CREATE TABLE Addresses (
+                id INTEGER NOT NULL DEFAULT nextval('addresses_id_seq'),
+                Street VARCHAR,
+                Number VARCHAR,
+                ZipCode INTEGER,
+                City VARCHAR,
+                State VARCHAR,
                 CONSTRAINT addresses_pk PRIMARY KEY (id)
 );
 
 
-ALTER SEQUENCE brcm.addresses_id_seq OWNED BY brcm.Addresses.id;
+ALTER SEQUENCE addresses_id_seq OWNED BY Addresses.id;
 
-CREATE TABLE brcm.Customers (
+CREATE TABLE Customers (
                 id INTEGER NOT NULL,
                 FirstName VARCHAR NOT NULL,
-                LastName VARCHAR NOT NULL,
-                DateOfBirth DATE NOT NULL,
-                Phone VARCHAR NOT NULL,
+                LastName VARCHAR,
+                DateOfBirth DATE,
+                Phone VARCHAR,
                 AddressId INTEGER NOT NULL,
                 CONSTRAINT customers_pk PRIMARY KEY (id)
 );
 
 
-CREATE TABLE brcm.Orders (
+CREATE TABLE Orders (
                 id INTEGER NOT NULL,
                 Date DATE NOT NULL,
                 Time TIME NOT NULL,
@@ -79,7 +80,7 @@ CREATE TABLE brcm.Orders (
 );
 
 
-CREATE TABLE brcm.LineItems (
+CREATE TABLE LineItems (
                 id INTEGER NOT NULL,
                 ActivityId INTEGER NOT NULL,
                 Quantity INTEGER NOT NULL,
@@ -89,7 +90,7 @@ CREATE TABLE brcm.LineItems (
 );
 
 
-CREATE TABLE brcm.Students (
+CREATE TABLE Students (
                 id INTEGER NOT NULL,
                 EnterDate DATE NOT NULL,
                 Major VARCHAR NOT NULL,
@@ -99,7 +100,7 @@ CREATE TABLE brcm.Students (
 );
 
 
-CREATE TABLE brcm.Professors (
+CREATE TABLE Professors (
                 id INTEGER NOT NULL,
                 Department VARCHAR NOT NULL,
                 Office VARCHAR NOT NULL,
@@ -108,65 +109,65 @@ CREATE TABLE brcm.Professors (
 );
 
 
-ALTER TABLE brcm.LineItems ADD CONSTRAINT appointments_lineitems_fk
+ALTER TABLE LineItems ADD CONSTRAINT appointments_lineitems_fk
 FOREIGN KEY (AppointmentId)
-REFERENCES brcm.Appointments (id)
+REFERENCES Appointments (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE brcm.HistoricalPrice ADD CONSTRAINT activities_historicalprice_fk
+ALTER TABLE HistoricalPrice ADD CONSTRAINT activities_historicalprice_fk
 FOREIGN KEY (ActivityId)
-REFERENCES brcm.Activities (id)
+REFERENCES Activities (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE brcm.LineItems ADD CONSTRAINT activities_lineitems_fk
+ALTER TABLE LineItems ADD CONSTRAINT activities_lineitems_fk
 FOREIGN KEY (ActivityId)
-REFERENCES brcm.Activities (id)
+REFERENCES Activities (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE brcm.Orders ADD CONSTRAINT discountscheme_orders_fk
+ALTER TABLE Orders ADD CONSTRAINT discountscheme_orders_fk
 FOREIGN KEY (DiscountSchemeId)
-REFERENCES brcm.DiscountScheme (id)
+REFERENCES DiscountScheme (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE brcm.Customers ADD CONSTRAINT addresses_customers_fk
+ALTER TABLE Customers ADD CONSTRAINT addresses_customers_fk
 FOREIGN KEY (AddressId)
-REFERENCES brcm.Addresses (id)
+REFERENCES Addresses (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE brcm.Orders ADD CONSTRAINT customers_orders_fk
+ALTER TABLE Orders ADD CONSTRAINT customers_orders_fk
 FOREIGN KEY (CustomerId)
-REFERENCES brcm.Customers (id)
+REFERENCES Customers (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE brcm.Students ADD CONSTRAINT customers_students_fk
+ALTER TABLE Students ADD CONSTRAINT customers_students_fk
 FOREIGN KEY (id)
-REFERENCES brcm.Customers (id)
+REFERENCES Customers (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE brcm.Professors ADD CONSTRAINT customers_professors_fk
+ALTER TABLE Professors ADD CONSTRAINT customers_professors_fk
 FOREIGN KEY (id)
-REFERENCES brcm.Customers (id)
+REFERENCES Customers (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE brcm.LineItems ADD CONSTRAINT orders_lineitems_fk
+ALTER TABLE LineItems ADD CONSTRAINT orders_lineitems_fk
 FOREIGN KEY (OrderId)
-REFERENCES brcm.Orders (id)
+REFERENCES Orders (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
