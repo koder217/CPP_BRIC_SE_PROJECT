@@ -8,6 +8,7 @@ import java.time.Instant;
 public class Appointment {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     @Column(name = "starttime", nullable = false)
@@ -22,7 +23,6 @@ public class Appointment {
     @Column(name = "customerid", nullable = false)
     private Integer customerid;
 
-    @Lob
     @Column(name = "status")
     private String status;
 

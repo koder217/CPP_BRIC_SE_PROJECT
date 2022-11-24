@@ -14,16 +14,22 @@ CREATE TABLE Appointments (
 
 ALTER SEQUENCE appointments_id_seq OWNED BY Appointments.id;
 
+CREATE SEQUENCE activities_id_seq;
+
 CREATE TABLE Activities (
-                id INTEGER NOT NULL,
+                id INTEGER NOT NULL DEFAULT nextval('activities_id_seq'),
                 Name VARCHAR NOT NULL,
                 Price DOUBLE PRECISION NOT NULL,
                 CONSTRAINT activities_pk PRIMARY KEY (id)
 );
 
 
+ALTER SEQUENCE activities_id_seq OWNED BY Activities.id;
+
+CREATE SEQUENCE historicalprice_id_seq;
+
 CREATE TABLE HistoricalPrice (
-                id INTEGER NOT NULL,
+                id INTEGER NOT NULL DEFAULT nextval('historicalprice_id_seq'),
                 Date DATE NOT NULL,
                 Price DOUBLE PRECISION NOT NULL,
                 ActivityId INTEGER NOT NULL,
@@ -31,8 +37,12 @@ CREATE TABLE HistoricalPrice (
 );
 
 
+ALTER SEQUENCE historicalprice_id_seq OWNED BY HistoricalPrice.id;
+
+CREATE SEQUENCE discountscheme_id_seq;
+
 CREATE TABLE DiscountScheme (
-                id INTEGER NOT NULL,
+                id INTEGER NOT NULL DEFAULT nextval('discountscheme_id_seq'),
                 PriceDiscount DOUBLE PRECISION,
                 PercentDiscount DOUBLE PRECISION,
                 CustomerType VARCHAR,
@@ -41,6 +51,8 @@ CREATE TABLE DiscountScheme (
                 CONSTRAINT discountscheme_pk PRIMARY KEY (id)
 );
 
+
+ALTER SEQUENCE discountscheme_id_seq OWNED BY DiscountScheme.id;
 
 CREATE SEQUENCE addresses_id_seq;
 
@@ -57,8 +69,10 @@ CREATE TABLE Addresses (
 
 ALTER SEQUENCE addresses_id_seq OWNED BY Addresses.id;
 
+CREATE SEQUENCE customers_id_seq;
+
 CREATE TABLE Customers (
-                id INTEGER NOT NULL,
+                id INTEGER NOT NULL DEFAULT nextval('customers_id_seq'),
                 FirstName VARCHAR NOT NULL,
                 LastName VARCHAR,
                 DateOfBirth DATE,
@@ -68,8 +82,12 @@ CREATE TABLE Customers (
 );
 
 
+ALTER SEQUENCE customers_id_seq OWNED BY Customers.id;
+
+CREATE SEQUENCE orders_id_seq;
+
 CREATE TABLE Orders (
-                id INTEGER NOT NULL,
+                id INTEGER NOT NULL DEFAULT nextval('orders_id_seq'),
                 Date DATE NOT NULL,
                 Time TIME NOT NULL,
                 CustomerId INTEGER NOT NULL,
@@ -80,8 +98,12 @@ CREATE TABLE Orders (
 );
 
 
+ALTER SEQUENCE orders_id_seq OWNED BY Orders.id;
+
+CREATE SEQUENCE lineitems_id_seq;
+
 CREATE TABLE LineItems (
-                id INTEGER NOT NULL,
+                id INTEGER NOT NULL DEFAULT nextval('lineitems_id_seq'),
                 ActivityId INTEGER NOT NULL,
                 Quantity INTEGER NOT NULL,
                 AppointmentId INTEGER NOT NULL,
@@ -90,8 +112,12 @@ CREATE TABLE LineItems (
 );
 
 
+ALTER SEQUENCE lineitems_id_seq OWNED BY LineItems.id;
+
+CREATE SEQUENCE students_id_seq;
+
 CREATE TABLE Students (
-                id INTEGER NOT NULL,
+                id INTEGER NOT NULL DEFAULT nextval('students_id_seq'),
                 EnterDate DATE NOT NULL,
                 Major VARCHAR NOT NULL,
                 Minor VARCHAR NOT NULL,
@@ -100,14 +126,20 @@ CREATE TABLE Students (
 );
 
 
+ALTER SEQUENCE students_id_seq OWNED BY Students.id;
+
+CREATE SEQUENCE professors_id_seq;
+
 CREATE TABLE Professors (
-                id INTEGER NOT NULL,
+                id INTEGER NOT NULL DEFAULT nextval('professors_id_seq'),
                 Department VARCHAR NOT NULL,
                 Office VARCHAR NOT NULL,
                 Research VARCHAR NOT NULL,
                 CONSTRAINT professors_pk PRIMARY KEY (id)
 );
 
+
+ALTER SEQUENCE professors_id_seq OWNED BY Professors.id;
 
 ALTER TABLE LineItems ADD CONSTRAINT appointments_lineitems_fk
 FOREIGN KEY (AppointmentId)

@@ -13,8 +13,8 @@ public class StudentDto extends CustomerDto implements Serializable {
     private final String minor;
     private final LocalDate graddate;
 
-    public StudentDto(Integer id, LocalDate enterdate, String major, String minor, LocalDate graddate, String firstname, String lastname, LocalDate dateofbirth, String phone) {
-        super(id, firstname, lastname, dateofbirth, phone);
+    public StudentDto(Integer id, LocalDate enterdate, String major, String minor, LocalDate graddate, String firstname, String lastname, LocalDate dateofbirth, String phone, AddressDto addressDto) {
+        super(id, firstname, lastname, dateofbirth, phone, addressDto);
         this.id = id;
         this.enterdate = enterdate;
         this.major = major;

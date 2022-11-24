@@ -7,22 +7,20 @@ import javax.persistence.*;
 public class Professor {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id", nullable = false)
-    private Customer customer;
+    private Customer customers;
 
-    @Lob
     @Column(name = "department", nullable = false)
     private String department;
 
-    @Lob
     @Column(name = "office", nullable = false)
     private String office;
 
-    @Lob
     @Column(name = "research", nullable = false)
     private String research;
 
@@ -34,12 +32,12 @@ public class Professor {
         this.id = id;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Customer getCustomers() {
+        return customers;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomers(Customer customers) {
+        this.customers = customers;
     }
 
     public String getDepartment() {

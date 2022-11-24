@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Lineitem {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

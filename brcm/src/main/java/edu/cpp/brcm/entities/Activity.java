@@ -7,9 +7,9 @@ import javax.persistence.*;
 public class Activity {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id;
 
-    @Lob
     @Column(name = "name", nullable = false)
     private String name;
 

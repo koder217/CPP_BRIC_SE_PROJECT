@@ -8,21 +8,20 @@ import java.time.LocalDate;
 public class Student {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id", nullable = false)
-    private Customer customer;
+    private Customer customers;
 
     @Column(name = "enterdate", nullable = false)
     private LocalDate enterdate;
 
-    @Lob
     @Column(name = "major", nullable = false)
     private String major;
 
-    @Lob
     @Column(name = "minor", nullable = false)
     private String minor;
 
@@ -37,12 +36,12 @@ public class Student {
         this.id = id;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Customer getCustomers() {
+        return customers;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomers(Customer customers) {
+        this.customers = customers;
     }
 
     public LocalDate getEnterdate() {

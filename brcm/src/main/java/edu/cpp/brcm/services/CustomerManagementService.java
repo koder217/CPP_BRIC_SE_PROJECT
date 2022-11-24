@@ -4,9 +4,10 @@ import edu.cpp.brcm.dtos.ProfessorDto;
 import edu.cpp.brcm.dtos.StudentDto;
 import java.util.List;
 
+
 public interface CustomerManagementService {
-    void saveStudent(StudentDto student);
-    void saveProfessor(ProfessorDto professor);
+    int saveStudent(StudentDto student);
+    Integer saveProfessor(ProfessorDto professor);
     StudentDto getStudentByBroncoId(int id);
     ProfessorDto getProfessorByBroncoId(int id);
     void updateStudent(StudentDto student);

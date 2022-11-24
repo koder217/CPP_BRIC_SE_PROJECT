@@ -8,6 +8,7 @@ import java.time.LocalDate;
 public class Discountscheme {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     @Column(name = "pricediscount")
@@ -16,7 +17,6 @@ public class Discountscheme {
     @Column(name = "percentdiscount")
     private Double percentdiscount;
 
-    @Lob
     @Column(name = "customertype")
     private String customertype;
 

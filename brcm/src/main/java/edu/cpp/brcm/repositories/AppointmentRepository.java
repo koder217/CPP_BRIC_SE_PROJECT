@@ -1,4 +1,4 @@
-package edu.cpp.brcm;
+package edu.cpp.brcm.repositories;
 
 import edu.cpp.brcm.entities.Appointment;
 

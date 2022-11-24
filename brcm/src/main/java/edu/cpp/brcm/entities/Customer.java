@@ -8,20 +8,18 @@ import java.time.LocalDate;
 public class Customer {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id;
 
-    @Lob
     @Column(name = "firstname", nullable = false)
     private String firstname;
 
-    @Lob
     @Column(name = "lastname")
     private String lastname;
 
     @Column(name = "dateofbirth")
     private LocalDate dateofbirth;
 
-    @Lob
     @Column(name = "phone")
     private String phone;
 

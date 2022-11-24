@@ -7,24 +7,21 @@ import javax.persistence.*;
 public class Address {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id;
 
-    @Lob
     @Column(name = "street")
     private String street;
 
-    @Lob
     @Column(name = "number")
     private String number;
 
     @Column(name = "zipcode")
     private Integer zipcode;
 
-    @Lob
     @Column(name = "city")
     private String city;
 
-    @Lob
     @Column(name = "state")
     private String state;
 

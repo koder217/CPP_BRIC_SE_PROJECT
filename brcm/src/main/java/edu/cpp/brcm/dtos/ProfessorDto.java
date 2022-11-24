@@ -12,8 +12,8 @@ public class ProfessorDto extends CustomerDto implements Serializable {
     private final String office;
     private final String research;
 
-    public ProfessorDto(Integer id, String department, String office, String research, String firstname, String lastname, LocalDate dateofbirth, String phone) {
-        super(id, firstname, lastname, dateofbirth, phone);
+    public ProfessorDto(Integer id, String department, String office, String research, String firstname, String lastname, LocalDate dateofbirth, String phone, AddressDto addressDto) {
+        super(id, firstname, lastname, dateofbirth, phone, addressDto);
         this.id = id;
         this.department = department;
         this.office = office;

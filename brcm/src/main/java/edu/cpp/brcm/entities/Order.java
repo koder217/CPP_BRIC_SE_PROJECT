@@ -9,6 +9,7 @@ import java.time.LocalTime;
 public class Order {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     @Column(name = "date", nullable = false)
@@ -24,7 +25,6 @@ public class Order {
     @Column(name = "discountapplied", nullable = false)
     private Double discountapplied;
 
-    @Lob
     @Column(name = "totalprice", nullable = false)
     private String totalprice;
 

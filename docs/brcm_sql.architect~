@@ -586,7 +586,7 @@
   <table id="TAB162" populated="true" UUID="bd3a39fd-1f1c-4c87-924b-3992b6caa66a" name="Professors" objectType="TABLE" physicalName="Professors" >
    <remarks></remarks>
    <folder id="FOLTAB1621" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL163" populated="true" UUID="9a4a7c2a-2b4a-4bfc-8772-148cb5c9f92c" autoIncrement="false" autoIncrementSequenceName="Customers_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL163" populated="true" UUID="9a4a7c2a-2b4a-4bfc-8772-148cb5c9f92c" autoIncrement="true" autoIncrementSequenceName="professors_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL164" populated="true" UUID="e6a0d8d3-4361-4435-a04d-08e05b563752" autoIncrement="false" autoIncrementSequenceName="Professors_Department_seq" defaultValue="" name="Department" nullable="0" physicalName="Department" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -612,7 +612,7 @@
   <table id="TAB169" populated="true" UUID="3051964d-5fff-4451-9c8a-dd3e3099f34e" name="Students" objectType="TABLE" physicalName="Students" >
    <remarks></remarks>
    <folder id="FOLTAB1691" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL170" populated="true" UUID="73835850-1bdf-4ea3-a550-51e3b8c68031" autoIncrement="false" autoIncrementSequenceName="Customers_id_seq_1" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL170" populated="true" UUID="73835850-1bdf-4ea3-a550-51e3b8c68031" autoIncrement="true" autoIncrementSequenceName="students_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL171" populated="true" UUID="08866859-ce25-4c4c-b97a-50f5cabf5a88" autoIncrement="false" autoIncrementSequenceName="Students_EnterDate_seq" defaultValue="" name="EnterDate" nullable="0" physicalName="EnterDate" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
@@ -641,7 +641,7 @@
   <table id="TAB177" populated="true" UUID="4e3cef0b-4f43-4e75-951f-b0a5a6c626dd" name="Customers" objectType="TABLE" physicalName="Customers" >
    <remarks></remarks>
    <folder id="FOLTAB1771" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL178" populated="true" UUID="7853c610-7670-4d64-97a1-63e17464e02f" autoIncrement="false" autoIncrementSequenceName="Customers_id_seq_2" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL178" populated="true" UUID="7853c610-7670-4d64-97a1-63e17464e02f" autoIncrement="true" autoIncrementSequenceName="Customers_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL179" populated="true" UUID="39796ef1-1d31-4e12-9ad1-2ec02f507c69" autoIncrement="false" autoIncrementSequenceName="Customers_FirstName_seq" defaultValue="" name="FirstName" nullable="0" physicalName="FirstName" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -705,7 +705,7 @@
   <table id="TAB195" populated="true" UUID="c3c99a87-2895-4ced-aff0-d686d6f71bd0" name="DiscountScheme" objectType="TABLE" physicalName="DiscountScheme" >
    <remarks></remarks>
    <folder id="FOLTAB1951" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL196" populated="true" UUID="74b0a396-83a1-4384-b7dc-46c03e642c8d" autoIncrement="false" autoIncrementSequenceName="DiscountScheme_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL196" populated="true" UUID="74b0a396-83a1-4384-b7dc-46c03e642c8d" autoIncrement="true" autoIncrementSequenceName="DiscountScheme_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL197" populated="true" UUID="575fbdec-ae1c-47d0-ac7b-9f531c015dc7" autoIncrement="false" autoIncrementSequenceName="DiscountScheme_PriceDiscount_seq" defaultValue="" name="PriceDiscount" nullable="1" physicalName="PriceDiscount" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
@@ -737,7 +737,7 @@
   <table id="TAB204" populated="true" UUID="8ecf7314-e3ff-4f11-b1f8-93d9cc2f5347" name="Activities" objectType="TABLE" physicalName="Activities" >
    <remarks></remarks>
    <folder id="FOLTAB2041" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL205" populated="true" UUID="c106541f-6509-4adf-85de-ac001aee57aa" autoIncrement="false" autoIncrementSequenceName="Activities_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL205" populated="true" UUID="c106541f-6509-4adf-85de-ac001aee57aa" autoIncrement="true" autoIncrementSequenceName="Activities_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL206" populated="true" UUID="346078bc-2785-424f-ab90-7d70480b1013" autoIncrement="false" autoIncrementSequenceName="Activities_Name_seq" defaultValue="" name="Name" nullable="0" physicalName="Name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -760,7 +760,7 @@
   <table id="TAB210" populated="true" UUID="1aa5f8cb-66ed-4983-8d57-c8144f0849b9" name="HistoricalPrice" objectType="TABLE" physicalName="HistoricalPrice" >
    <remarks></remarks>
    <folder id="FOLTAB2101" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL211" populated="true" UUID="24c3b9b7-773c-4b5a-a95e-6ac50ffd4075" autoIncrement="false" autoIncrementSequenceName="HistoricalPrice_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL211" populated="true" UUID="24c3b9b7-773c-4b5a-a95e-6ac50ffd4075" autoIncrement="true" autoIncrementSequenceName="HistoricalPrice_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL212" populated="true" UUID="d0c2c6bb-da97-456f-a0af-3e4eac36e909" autoIncrement="false" autoIncrementSequenceName="HistoricalPrice_Date_seq" defaultValue="" name="Date" nullable="0" physicalName="Date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
@@ -786,7 +786,7 @@
   <table id="TAB217" populated="true" UUID="5f5b6700-fadc-42f1-827c-5170773c5216" name="Orders" objectType="TABLE" physicalName="Orders" >
    <remarks></remarks>
    <folder id="FOLTAB2171" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL218" populated="true" UUID="aa44fcc0-f86a-4fce-a315-4b92149aad33" autoIncrement="false" autoIncrementSequenceName="Orders_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="3" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL218" populated="true" UUID="aa44fcc0-f86a-4fce-a315-4b92149aad33" autoIncrement="true" autoIncrementSequenceName="Orders_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="3" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL219" populated="true" UUID="edb35bc3-c1a0-47cd-b804-b46abdb9cc66" autoIncrement="false" autoIncrementSequenceName="Orders_Date_seq" defaultValue="" name="Date" nullable="0" physicalName="Date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
@@ -821,7 +821,7 @@
   <table id="TAB227" populated="true" UUID="2a3020bc-f2a3-49c5-9a31-b6d9d81a58e5" name="LineItems" objectType="TABLE" physicalName="LineItems" >
    <remarks></remarks>
    <folder id="FOLTAB2271" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL228" populated="true" UUID="378cc769-1ea8-413c-8897-d5f731b03390" autoIncrement="false" autoIncrementSequenceName="LineItems_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="4" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL228" populated="true" UUID="378cc769-1ea8-413c-8897-d5f731b03390" autoIncrement="true" autoIncrementSequenceName="LineItems_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="4" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL229" populated="true" UUID="befb5b28-b210-4277-a23b-064c2aac46f3" autoIncrement="false" autoIncrementSequenceName="LineItems_ActivityId_seq" defaultValue="" name="ActivityId" nullable="0" physicalName="ActivityId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >

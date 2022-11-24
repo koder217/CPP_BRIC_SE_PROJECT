@@ -8,6 +8,7 @@ import java.time.LocalDate;
 public class Historicalprice {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     @Column(name = "date", nullable = false)

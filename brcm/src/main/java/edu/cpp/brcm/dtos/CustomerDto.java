@@ -13,12 +13,14 @@ public class CustomerDto implements Serializable {
     private final LocalDate dateofbirth;
     private final String phone;
 
-    public CustomerDto(Integer id, String firstname, String lastname, LocalDate dateofbirth, String phone) {
+    private final AddressDto address;
+    public CustomerDto(Integer id, String firstname, String lastname, LocalDate dateofbirth, String phone, AddressDto address) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.dateofbirth = dateofbirth;
         this.phone = phone;
+        this.address = address;
     }
 
     public Integer getId() {
@@ -40,4 +42,5 @@ public class CustomerDto implements Serializable {
     public String getPhone() {
         return phone;
     }
+    public AddressDto getAddress() {return address;}
 }
