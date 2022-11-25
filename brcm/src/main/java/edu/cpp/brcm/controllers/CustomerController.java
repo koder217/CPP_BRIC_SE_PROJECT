@@ -34,11 +34,10 @@ public class CustomerController {
         return ResponseEntity.ok();
     }
 
-//    @GetMapping("/customers/{id}")
-//    public ResponseEntity<Customer> getCustomerById(@PathVariable(value = "id") int CustomerId)
-//            throws Exception {
-//        Customer Customer = repository.findById(CustomerId)
-//                .orElseThrow(() -> new Exception("Customer not found for this id :: " + CustomerId));
-//        return ResponseEntity.ok().body(Customer);
-//    }
+    @GetMapping("/students/{id}")
+    public ResponseEntity<StudentDto> getStudentById(@PathVariable(value = "id") int studentId)
+            throws Exception {
+        StudentDto student = customerManagementService.getStudentByBroncoId(studentId);
+        return ResponseEntity.ok().body(student);
+    }
 }

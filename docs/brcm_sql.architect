@@ -801,7 +801,7 @@
     <column id="COL222" populated="true" UUID="e3c60560-348c-4b3a-8855-907a2deb6ff9" autoIncrement="false" autoIncrementSequenceName="Orders_DiscountApplied_seq" defaultValue="" name="DiscountApplied" nullable="0" physicalName="DiscountApplied" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
      <remarks></remarks>
     </column>
-    <column id="COL223" populated="true" UUID="6be12563-39f8-4f3d-8849-8162a9054681" autoIncrement="false" autoIncrementSequenceName="Orders_TotalPrice_seq" defaultValue="" name="TotalPrice" nullable="0" physicalName="TotalPrice" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL223" populated="true" UUID="6be12563-39f8-4f3d-8849-8162a9054681" autoIncrement="false" autoIncrementSequenceName="Orders_TotalPrice_seq" defaultValue="" name="TotalPrice" nullable="0" physicalName="TotalPrice" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
      <remarks></remarks>
     </column>
     <column id="COL224" populated="true" UUID="0715fc3d-6c9d-46ca-85e1-3fffb2da9b39" autoIncrement="false" autoIncrementSequenceName="Orders_DiscountSchemeId_seq" defaultValue="" name="DiscountSchemeId" nullable="0" physicalName="DiscountSchemeId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -880,36 +880,36 @@
    </folder>
   </table>
   <relationships>
-   <relationship id="REL244" populated="true" UUID="27275a2e-9a0f-499a-8b64-e49fd4206377" deferrability="7" deleteRule="3" fk-table-ref="TAB217" fkCardinality="7" identifying="true" name="Customers_Orders_fk" physicalName="customers_orders_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
+   <relationship id="REL244" populated="true" UUID="27275a2e-9a0f-499a-8b64-e49fd4206377" deferrability="7" deleteRule="3" fk-table-ref="TAB217" fkCardinality="7" identifying="true" name="Customers_Orders_fk" physicalName="Customers_Orders_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP245" populated="true" UUID="37b0ec4a-22da-44db-ac68-5903697bf438" fk-column-ref="COL221" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL178" />
    </relationship>
-   <relationship id="REL246" populated="true" UUID="8b06a95b-ca37-4901-a817-c08b299ebecc" deferrability="7" deleteRule="3" fk-table-ref="TAB169" fkCardinality="7" identifying="true" name="Customers_Students_fk" physicalName="customers_students_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
+   <relationship id="REL246" populated="true" UUID="8b06a95b-ca37-4901-a817-c08b299ebecc" deferrability="7" deleteRule="3" fk-table-ref="TAB169" fkCardinality="7" identifying="true" name="Customers_Students_fk" physicalName="Customers_Students_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP247" populated="true" UUID="bc869b75-4d71-41fd-92f5-80a37de9598f" fk-column-ref="COL170" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL178" />
    </relationship>
-   <relationship id="REL248" populated="true" UUID="b173357c-d281-4ff2-aef6-60251c637bab" deferrability="7" deleteRule="3" fk-table-ref="TAB162" fkCardinality="7" identifying="true" name="Customers_Professors_fk" physicalName="customers_professors_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
+   <relationship id="REL248" populated="true" UUID="b173357c-d281-4ff2-aef6-60251c637bab" deferrability="7" deleteRule="3" fk-table-ref="TAB162" fkCardinality="7" identifying="true" name="Customers_Professors_fk" physicalName="Customers_Professors_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP249" populated="true" UUID="33eb0a74-dab7-4409-8dab-30e492b5148d" fk-column-ref="COL163" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL178" />
    </relationship>
-   <relationship id="REL250" populated="true" UUID="3a0ec06e-2a73-4e83-9754-0cf2f7558f63" deferrability="7" deleteRule="3" fk-table-ref="TAB177" fkCardinality="7" identifying="true" name="Addresses_Customers_fk" physicalName="addresses_customers_fk" pk-table-ref="TAB186" pkCardinality="2" updateRule="3" >
+   <relationship id="REL250" populated="true" UUID="3a0ec06e-2a73-4e83-9754-0cf2f7558f63" deferrability="7" deleteRule="3" fk-table-ref="TAB177" fkCardinality="7" identifying="true" name="Addresses_Customers_fk" physicalName="Addresses_Customers_fk" pk-table-ref="TAB186" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP251" populated="true" UUID="f1a63702-6a38-4bdf-b4ed-33df637115d1" fk-column-ref="COL183" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL187" />
    </relationship>
-   <relationship id="REL252" populated="true" UUID="5e5ca12b-6c03-4be4-b1c9-c4fc7d8826cf" deferrability="7" deleteRule="3" fk-table-ref="TAB217" fkCardinality="7" identifying="true" name="DiscountScheme_Orders_fk" physicalName="discountscheme_orders_fk" pk-table-ref="TAB195" pkCardinality="2" updateRule="3" >
+   <relationship id="REL252" populated="true" UUID="5e5ca12b-6c03-4be4-b1c9-c4fc7d8826cf" deferrability="7" deleteRule="3" fk-table-ref="TAB217" fkCardinality="7" identifying="true" name="DiscountScheme_Orders_fk" physicalName="DiscountScheme_Orders_fk" pk-table-ref="TAB195" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP253" populated="true" UUID="3ff2d20f-9253-46f0-8363-80c16fe779c9" fk-column-ref="COL224" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL196" />
    </relationship>
-   <relationship id="REL254" populated="true" UUID="6b56258e-8f4f-4ffe-b8ad-21b2a5f3bd61" deferrability="7" deleteRule="3" fk-table-ref="TAB210" fkCardinality="7" identifying="true" name="Activities_HistoricalPrice_fk" physicalName="activities_historicalprice_fk" pk-table-ref="TAB204" pkCardinality="2" updateRule="3" >
+   <relationship id="REL254" populated="true" UUID="6b56258e-8f4f-4ffe-b8ad-21b2a5f3bd61" deferrability="7" deleteRule="3" fk-table-ref="TAB210" fkCardinality="7" identifying="true" name="Activities_HistoricalPrice_fk" physicalName="Activities_HistoricalPrice_fk" pk-table-ref="TAB204" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP255" populated="true" UUID="aea03873-1f2a-47f3-a335-7bb356da17a3" fk-column-ref="COL214" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL205" />
    </relationship>
-   <relationship id="REL256" populated="true" UUID="7b406951-2b45-4a42-a83e-a9405dc90989" deferrability="7" deleteRule="3" fk-table-ref="TAB227" fkCardinality="7" identifying="true" name="Activities_LineItems_fk" physicalName="activities_lineitems_fk" pk-table-ref="TAB204" pkCardinality="2" updateRule="3" >
+   <relationship id="REL256" populated="true" UUID="7b406951-2b45-4a42-a83e-a9405dc90989" deferrability="7" deleteRule="3" fk-table-ref="TAB227" fkCardinality="7" identifying="true" name="Activities_LineItems_fk" physicalName="Activities_LineItems_fk" pk-table-ref="TAB204" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP257" populated="true" UUID="29b5df45-8f46-4bf5-8c9a-8bb2ec76d96c" fk-column-ref="COL229" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL205" />
    </relationship>
-   <relationship id="REL258" populated="true" UUID="3fb93eec-d832-4734-be5b-2f74deaa821b" deferrability="7" deleteRule="3" fk-table-ref="TAB227" fkCardinality="7" identifying="true" name="Orders_LineItems_fk" physicalName="orders_lineitems_fk" pk-table-ref="TAB217" pkCardinality="2" updateRule="3" >
+   <relationship id="REL258" populated="true" UUID="3fb93eec-d832-4734-be5b-2f74deaa821b" deferrability="7" deleteRule="3" fk-table-ref="TAB227" fkCardinality="7" identifying="true" name="Orders_LineItems_fk" physicalName="Orders_LineItems_fk" pk-table-ref="TAB217" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP259" populated="true" UUID="b93ba463-fe7d-44b4-b5e7-3a81074dcdda" fk-column-ref="COL232" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL218" />
    </relationship>
-   <relationship id="REL260" populated="true" UUID="acd37020-7d63-4d41-a0a6-0d978c211685" deferrability="7" deleteRule="3" fk-table-ref="TAB227" fkCardinality="7" identifying="true" name="Appointments_LineItems_fk" physicalName="appointments_lineitems_fk" pk-table-ref="TAB235" pkCardinality="2" updateRule="3" >
+   <relationship id="REL260" populated="true" UUID="acd37020-7d63-4d41-a0a6-0d978c211685" deferrability="7" deleteRule="3" fk-table-ref="TAB227" fkCardinality="7" identifying="true" name="Appointments_LineItems_fk" physicalName="Appointments_LineItems_fk" pk-table-ref="TAB235" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP261" populated="true" UUID="bddfc5e2-e17e-405a-94ce-d71d09141cf2" fk-column-ref="COL231" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL236" />
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">

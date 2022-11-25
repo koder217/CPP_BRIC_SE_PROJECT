@@ -1,5 +1,7 @@
 package edu.cpp.brcm.dtos;
 
+import edu.cpp.brcm.entities.Order;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -14,11 +16,10 @@ public class OrderDto implements Serializable {
     private final LocalDate date;
     private final LocalTime time;
     private final Double discountapplied;
-    private final String totalprice;
-
+    private final Double totalprice;
     private final List<LineitemDto> lineitems;
 
-    public OrderDto(Integer id, LocalDate date, LocalTime time, Double discountapplied, String totalprice) {
+    public OrderDto(Integer id, LocalDate date, LocalTime time, Double discountapplied, Double totalprice) {
         this.id = id;
         this.date = date;
         this.time = time;
@@ -56,7 +57,7 @@ public class OrderDto implements Serializable {
         return discountapplied;
     }
 
-    public String getTotalprice() {
+    public Double getTotalprice() {
         return totalprice;
     }
 }

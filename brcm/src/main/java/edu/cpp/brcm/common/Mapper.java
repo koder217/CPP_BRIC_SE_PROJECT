@@ -1,12 +1,9 @@
 package edu.cpp.brcm.common;
 
-import edu.cpp.brcm.dtos.AddressDto;
-import edu.cpp.brcm.dtos.ProfessorDto;
-import edu.cpp.brcm.dtos.StudentDto;
-import edu.cpp.brcm.entities.Address;
-import edu.cpp.brcm.entities.Customer;
-import edu.cpp.brcm.entities.Professor;
-import edu.cpp.brcm.entities.Student;
+import edu.cpp.brcm.dtos.*;
+import edu.cpp.brcm.entities.*;
+
+import java.util.List;
 
 public class Mapper {
     public static Address toEntity(AddressDto addressDto){
@@ -101,4 +98,102 @@ public class Mapper {
                 p.getCustomers().getDateofbirth(),
                 p.getCustomers().getPhone(), addressDto);
     }
+
+    public static Activity toEntity(ActivityDto activityDto){
+        if(activityDto == null)
+            return null;
+        Activity a= new Activity();
+        a.setId(activityDto.getId());
+        a.setName(activityDto.getName());
+        a.setPrice(activityDto.getPrice());
+        return a;
+    }
+
+    public static ActivityDto toDTO(Activity activity){
+        if (activity == null){
+            return null;
+        }
+        return new ActivityDto(activity.getId(), activity.getName(), activity.getPrice());
+    }
+
+    public static Appointment toEntity(AppointmentDto appointmentDto){
+        if(appointmentDto == null){
+            return null;
+        }
+        Appointment a = new Appointment();
+        a.setActivityid(appointmentDto.getActivityid());
+        a.setCustomerid(appointmentDto.getCustomerid());
+        a.setStarttime(appointmentDto.getStarttime());
+        a.setEndtime(appointmentDto.getEndtime());
+        a.setStatus(appointmentDto.getStatus());
+        return a;
+    }
+
+    public static AppointmentDto toDTO(Appointment appointment){
+        if(appointment == null){
+            return null;
+        }
+        AppointmentDto a = new AppointmentDto(
+                appointment.getId(),
+                appointment.getStarttime(),
+                appointment.getEndtime(),
+                appointment.getActivityid(),
+                appointment.getCustomerid(),
+                appointment.getStatus());
+        return a;
+    }
+
+    public static Discountscheme toEntity(DiscountschemeDto d){
+        if (d == null)
+            return null;
+        Discountscheme ds = new Discountscheme();
+        ds.setCustomertype(d.getCustomertype());
+        ds.setEnddate(d.getEnddate());
+        ds.setStartdate(d.getStartdate());
+        ds.setPercentdiscount(d.getPercentdiscount());
+        ds.setPricediscount(d.getPricediscount());
+        return ds;
+    }
+
+    public static DiscountschemeDto toDTO(Discountscheme d){
+        if (d == null)
+            return null;
+        return new DiscountschemeDto(
+                d.getId(),
+                d.getPricediscount(),
+                d.getPercentdiscount(),
+                d.getCustomertype(),
+                d.getStartdate(),
+                d.getEnddate());
+    }
+
+    public static HistoricalpriceDto toDTO(Historicalprice hp){
+        if (hp == null)
+            return null;
+        return new HistoricalpriceDto(hp.getId(), hp.getDate(), hp.getPrice(), hp.getActivityid().getId());
+    }
+
+    public static OrderDto toDTO(Order o, List<Lineitem> lineitems) {
+        OrderDto od = new OrderDto(
+                o.getId(),
+                o.getDate(),
+                o.getTime(),
+                o.getDiscountapplied(),
+                o.getTotalprice());
+        if(lineitems != null && lineitems.size() > 0){
+            for(Lineitem ld:lineitems){
+                od.addLineItem(Mapper.toDTO(ld));
+            }
+        }
+        return od;
+    }
+
+    private static LineitemDto toDTO(Lineitem ld) {
+        return new LineitemDto(
+                ld.getId(),
+                ld.getActivityid().getId(),
+                Mapper.toDTO(ld.getAppointmentid()),
+                ld.getQuantity(),ld.getOrderid().getId());
+    }
+
 }

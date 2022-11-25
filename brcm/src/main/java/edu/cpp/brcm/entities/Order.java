@@ -26,7 +26,7 @@ public class Order {
     private Double discountapplied;
 
     @Column(name = "totalprice", nullable = false)
-    private String totalprice;
+    private Double totalprice;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "discountschemeid", nullable = false)
@@ -72,11 +72,11 @@ public class Order {
         this.discountapplied = discountapplied;
     }
 
-    public String getTotalprice() {
+    public Double getTotalprice() {
         return totalprice;
     }
 
-    public void setTotalprice(String totalprice) {
+    public void setTotalprice(Double totalprice) {
         this.totalprice = totalprice;
     }
 
