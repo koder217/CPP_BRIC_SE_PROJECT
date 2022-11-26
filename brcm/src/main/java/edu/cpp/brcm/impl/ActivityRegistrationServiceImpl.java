@@ -8,13 +8,16 @@ import edu.cpp.brcm.repositories.ActivityRepository;
 import edu.cpp.brcm.repositories.PriceHistoryRepository;
 import edu.cpp.brcm.services.ActivityRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ActivityRegistrationServiceImpl implements ActivityRegistrationService {
+
+@Service
+class ActivityRegistrationServiceImpl implements ActivityRegistrationService {
 
     @Autowired
     private ActivityRepository activityRepository;

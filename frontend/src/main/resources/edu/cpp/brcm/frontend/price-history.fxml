@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.control.cell.ChoiceBoxListCell?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.cpp.brcm.frontend.PriceHistoryController">
+   <children>
+      <VBox layoutX="1.0" layoutY="-3.0" prefHeight="400.0" prefWidth="594.0">
+         <children>
+             <Label text="Select Activity:" />
+             <ChoiceBox fx:id="choiceActivities" prefWidth="150.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
