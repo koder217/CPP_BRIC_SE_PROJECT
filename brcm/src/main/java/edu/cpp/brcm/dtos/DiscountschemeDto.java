@@ -13,7 +13,14 @@ public class DiscountschemeDto implements Serializable {
     private final String customertype;
     private final LocalDate startdate;
     private final LocalDate enddate;
-
+    public DiscountschemeDto(){
+        this.id = 0;
+        this.pricediscount = 0.0;
+        this.percentdiscount = 0.0;
+        this.customertype = "";
+        this.startdate = LocalDate.MIN;
+        this.enddate = LocalDate.MIN;
+    }
     public DiscountschemeDto(Integer id, Double pricediscount, Double percentdiscount, String customertype, LocalDate startdate, LocalDate enddate) {
         this.id = id;
         this.pricediscount = pricediscount;

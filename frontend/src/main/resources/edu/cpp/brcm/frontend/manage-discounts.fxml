@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<SplitPane fx:controller="edu.cpp.brcm.frontend.ManageDiscountsController" dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="690.0" prefWidth="-Infinity">
+            <children>
+                <VBox AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+                <HBox prefWidth="-Infinity" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+                    <children>
+                        <ToolBar prefHeight="40.0" HBox.hgrow="ALWAYS" prefWidth="-Infinity">
+                            <items>
+                                <Button fx:id="btnAddNewDiscount" mnemonicParsing="false" text="Add New Discount" />
+                                <Button fx:id="btnRefreshDiscounts" mnemonicParsing="false" text="Refresh" />
+                            </items>
+                        </ToolBar>
+                    </children>
+                </HBox>
+                <HBox>
+                    <children>
+                        <VBox prefWidth="400">
+                            <Label text="Id:">
+                                <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="5.0" top="5.0" />
+                                </VBox.margin>
+                            </Label>
+                            <Label fx:id="lblDiscountId">
+                                <VBox.margin>
+                                    <Insets left="15.0" right="5.0" />
+                                </VBox.margin>
+                            </Label>
+                            <Label text="Price Discount:">
+                                <VBox.margin>
+                                    <Insets left="15.0" right="5.0" top="10.0" />
+                                </VBox.margin>
+                            </Label>
+                            <TextField fx:id="txtDiscountPrice" maxWidth="200">
+                                <VBox.margin>
+                                    <Insets left="15.0" right="5.0" top="5.0" />
+                                </VBox.margin>
+                            </TextField>
+                            <Label text="Percentage Discount:">
+                                <VBox.margin>
+                                    <Insets left="15.0" right="5.0" top="10.0" />
+                                </VBox.margin>
+                            </Label>
+                            <TextField fx:id="txtDiscountPercent" maxWidth="200">
+                                <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="5.0" top="5.0" />
+                                </VBox.margin>
+                            </TextField>
+                        </VBox>
+                        <VBox>
+                            <Label text="Discount Start Date:">
+                                <VBox.margin>
+                                    <Insets left="15.0" right="5.0" top="5.0" />
+                                </VBox.margin>
+                            </Label>
+                            <DatePicker fx:id="dtStart" maxWidth="200">
+                                <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="5.0" top="5.0" />
+                                </VBox.margin>
+                            </DatePicker>
+                            <Label text="Discount End Date:">
+                                <VBox.margin>
+                                    <Insets left="15.0" right="5.0" top="10.0" />
+                                </VBox.margin>
+                            </Label>
+                            <DatePicker fx:id="dtEnd" maxWidth="200">
+                                <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="5.0" top="5.0" />
+                                </VBox.margin>
+                            </DatePicker>
+                            <Label text="Customer Type:">
+                                <VBox.margin>
+                                    <Insets left="15.0" right="5.0" top="10.0" />
+                                </VBox.margin>
+                            </Label>
+                            <ChoiceBox fx:id="choiceCustomerType" prefWidth="150.0" >
+                                <VBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="5.0" top="5.0" />
+                                </VBox.margin>
+                            </ChoiceBox>
+                        </VBox>
+                    </children>
+                </HBox>
+                    <Button fx:id="btnSaveChanges" mnemonicParsing="false" text="Save Changes" defaultButton="true">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="15.0" right="5.0" top="15.0" />
+                        </VBox.margin>
+                    </Button>
+                </VBox>
+
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="-Infinity" prefWidth="-Infinity">
+            <children>
+                <TableView fx:id="tableDiscounts" layoutX="43.0" layoutY="-19.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>

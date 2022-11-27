@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
@@ -13,22 +12,22 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="475.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane fx:controller="edu.cpp.brcm.frontend.ManageActivitiesController" dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="475.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <items>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="750.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="-Infinity">
             <children>
-                <VBox layoutX="54.0" layoutY="13.0" prefHeight="124.0" prefWidth="512.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <VBox layoutX="54.0" layoutY="13.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="750.0">
+                        <HBox prefHeight="-Infinity" prefWidth="-Infinity">
                             <children>
-                        <ToolBar prefHeight="40.0" prefWidth="742.0">
-                            <items>
-                                <Button fx:id="btnAddNewActivity" mnemonicParsing="false" text="Add New Activity" />
-                                <Button fx:id="btnRefreshActivities" mnemonicParsing="false" text="Refresh" />
-                                <Pane HBox.hgrow="ALWAYS" />
-                                <Button fx:id="btnSaveChanges" mnemonicParsing="false" text="Save Changes" />
-                            </items>
-                        </ToolBar>
+                                <ToolBar prefHeight="40.0" HBox.hgrow="ALWAYS" prefWidth="-Infinity">
+                                    <items>
+                                        <Button fx:id="btnAddNewActivity" mnemonicParsing="false" text="Add New Activity" />
+                                        <Button fx:id="btnRefreshActivities" mnemonicParsing="false" text="Refresh" />
+                                        <Pane HBox.hgrow="ALWAYS" />
+
+                                    </items>
+                                </ToolBar>
                             </children>
                         </HBox>
                         <Label text="Id:">
@@ -38,7 +37,7 @@
                         </Label>
                         <Label fx:id="lblActivityId">
                             <VBox.margin>
-                                <Insets left="15.0" right="5.0" top="5.0" />
+                                <Insets left="15.0" right="5.0" />
                             </VBox.margin>
                         </Label>
                         <Label text="Name:">
@@ -48,7 +47,7 @@
                         </Label>
                         <TextField fx:id="txtActivityName" maxWidth="200">
                             <VBox.margin>
-                                <Insets left="15.0" right="5.0" top="10.0" />
+                                <Insets left="15.0" right="5.0" top="5.0" />
                             </VBox.margin>
                         </TextField>
                         <Label text="Price:">
@@ -58,22 +57,21 @@
                         </Label>
                         <TextField fx:id="txtActivityPrice" maxWidth="200">
                             <VBox.margin>
-                                <Insets bottom="5.0" left="15.0" right="5.0" top="10.0" />
+                                <Insets bottom="5.0" left="15.0" right="5.0" top="5.0" />
                             </VBox.margin>
                         </TextField>
+                        <Button fx:id="btnSaveChanges" mnemonicParsing="false" text="Save Changes">
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="15.0" right="5.0" top="15.0" />
+                            </VBox.margin>
+                        </Button>
                     </children>
                 </VBox>
             </children>
         </AnchorPane>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="-Infinity" prefWidth="-Infinity">
             <children>
-                <TableView fx:id="tableActivities" layoutX="43.0" layoutY="-19.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columns>
-                        <TableColumn prefWidth="75.0" text="Id" />
-                        <TableColumn prefWidth="75.0" text="Name" />
-                        <TableColumn prefWidth="75.0" text="Price" />
-                    </columns>
-                </TableView>
+                <TableView fx:id="tableActivities" layoutX="43.0" layoutY="-19.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             </children>
         </AnchorPane>
     </items>

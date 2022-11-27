@@ -42,6 +42,15 @@ class ActivityRegistrationServiceImpl implements ActivityRegistrationService {
 
     @Override
     public void deleteActivity(Integer id) {
+        Activity a = activityRepository
+                .findById(id)
+                .orElseThrow(()->new ResourceAccessException("Activity not found with id:"+id));
+        var history = priceHistoryRepository.findByActivityid(a);
+        if (history!= null && history.size() > 0){
+            history.forEach(h->{
+                priceHistoryRepository.deleteById(h.getId());
+            });
+        }
         activityRepository.deleteById(id);
     }
 

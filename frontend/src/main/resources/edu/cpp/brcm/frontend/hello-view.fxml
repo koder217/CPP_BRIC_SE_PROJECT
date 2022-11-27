@@ -40,6 +40,7 @@
                                  <TreeItem fx:id="tiManageDiscounts" value="Discounts" />
                                  <TreeItem fx:id="tiManageOrders" value="Orders" />
                                  <TreeItem fx:id="tiPriceHistory" value="Price History" />
+                                 <TreeItem fx:id="tiReports" value="Reports" />
                              </children>
                          </TreeItem>
                      </root>
@@ -48,7 +49,12 @@
             </AnchorPane>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="479.0" prefWidth="754.0" >
                 <children>
-                    <fx:include fx:id="viewPriceHistory" source="price-history.fxml" visible="false" />
+                    <fx:include fx:id="viewPriceHistory" source="price-history.fxml" visible="false" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
+                    <fx:include fx:id="viewManageActivities" source="manage-activities.fxml" visible="false"  AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
+                    <fx:include fx:id="viewManageDiscounts" source="manage-discounts.fxml" visible="false"  AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
+                    <fx:include fx:id="viewManageOrders" source="manage-orders.fxml" visible="false"  AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
+                    <fx:include fx:id="viewManageCustomers" source="manage-customers.fxml" visible="false"  AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
+                    <fx:include fx:id="viewShowReports" source="show-reports.fxml" visible="false"  AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
                 </children>
               </AnchorPane>
           </items>

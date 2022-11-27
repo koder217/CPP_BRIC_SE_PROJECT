@@ -11,6 +11,12 @@ public class HistoricalpriceDto implements Serializable {
     private final LocalDate date;
     private final Double price;
     private final Integer activityid;
+    public HistoricalpriceDto(){
+        this.id = 0;
+        this.date = LocalDate.MIN;
+        this.price = null;
+        this.activityid = 0;
+    }
     public HistoricalpriceDto(Integer id, LocalDate date, Double price, Integer activityid) {
         this.id = id;
         this.date = date;

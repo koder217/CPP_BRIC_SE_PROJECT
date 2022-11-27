@@ -10,6 +10,11 @@ public class ActivityDto implements Serializable {
     private final String name;
     private final Double price;
 
+    public ActivityDto(){
+        this.id = 0;
+        this.name = null;
+        this.price = null;
+    }
     public ActivityDto(Integer id, String name, Double price) {
         this.id = id;
         this.name = name;
