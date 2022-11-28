@@ -1,5 +1,7 @@
 package edu.cpp.brcm.dtos;
 
+import edu.cpp.brcm.entities.Student;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 

@@ -6,28 +6,29 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.SubScene?>
-<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.cpp.brcm.frontend.HelloController">
+<AnchorPane prefHeight="-Infinity" prefWidth="-Infinity" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.cpp.brcm.frontend.HelloController">
     <children>
-        <HBox prefHeight="100.0" prefWidth="1024.0">
+        <HBox prefHeight="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@CR-logo.png" />
-               </image>
-               <HBox.margin>
-                  <Insets bottom="5.0" left="5.0" top="5.0" />
-               </HBox.margin></ImageView>
+                   <image>
+                      <Image url="@CR-logo.png" />
+                   </image>
+                   <HBox.margin>
+                      <Insets bottom="5.0" left="5.0" top="5.0" />
+                   </HBox.margin>
+                </ImageView>
                 <Label prefHeight="120.0" prefWidth="865.0" text="Bronco Recreation Complex Management" textAlignment="CENTER">
                     <font>
                         <Font name="Roboto Bold" size="36.0" />
                     </font>
                     <padding>
                         <Insets bottom="20.0" left="30.0" right="10.0" top="14.0" />
-                    </padding></Label>
+                    </padding>
+                </Label>
             </children>
         </HBox>
-        <SplitPane dividerPositions="0.30" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0">
+        <SplitPane dividerPositions="0.20" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0">
           <items>
             <AnchorPane maxWidth="200.0" minHeight="0.0" minWidth="90.0" prefHeight="698.0" prefWidth="200.0">
                  <children>
@@ -61,4 +62,4 @@
         </SplitPane>
 
     </children>
-</VBox>
+</AnchorPane>

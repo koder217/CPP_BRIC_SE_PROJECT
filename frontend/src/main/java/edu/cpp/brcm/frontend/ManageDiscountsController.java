@@ -1,11 +1,17 @@
 package edu.cpp.brcm.frontend;
 
 import edu.cpp.brcm.dtos.DiscountschemeDto;
+import edu.cpp.brcm.frontend.http.BrcmAPI;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Objects;
 
 public class ManageDiscountsController {
     @FXML
@@ -31,7 +37,26 @@ public class ManageDiscountsController {
     private TableView.TableViewSelectionModel<DiscountschemeDto> selectionModel;
 
     @FXML
-    public void initialize(){
+    private void btnRefreshDiscounts_Clicked(ActionEvent e) {
+        refreshGrid();
+    }
+
+    @FXML
+    private void btnAddNewDiscount_Clicked(ActionEvent e) {
+        lblDiscountId.setText("New");
+        txtDiscountPercent.setText("");
+        txtDiscountPrice.setText("");
+        choiceCustomerType.setValue(null);
+        dtStart.setValue(LocalDate.now());
+        dtEnd.setValue(LocalDate.now().plusWeeks(1));
+    }
+
+    @FXML
+    public void initialize() {
+        btnAddNewDiscount.setOnAction(this::btnAddNewDiscount_Clicked);
+        btnRefreshDiscounts.setOnAction(this::btnRefreshDiscounts_Clicked);
+        btnSaveChanges.setOnAction(this::btnSaveChanges_Clicked);
+
         choiceCustomerType.getItems().add("STUDENT");
         choiceCustomerType.getItems().add("PROFESSOR");
         tableDiscounts.setPlaceholder(
@@ -57,14 +82,14 @@ public class ManageDiscountsController {
         column4.setCellValueFactory(
                 new PropertyValueFactory<>("customertype"));
 
-        TableColumn<DiscountschemeDto, String> column5 =
+        TableColumn<DiscountschemeDto, LocalDate> column5 =
                 new TableColumn<>("Start Date");
-        column4.setCellValueFactory(
+        column5.setCellValueFactory(
                 new PropertyValueFactory<>("startdate"));
 
-        TableColumn<DiscountschemeDto, String> column6 =
+        TableColumn<DiscountschemeDto, LocalDate> column6 =
                 new TableColumn<>("End Date");
-        column4.setCellValueFactory(
+        column6.setCellValueFactory(
                 new PropertyValueFactory<>("enddate"));
 
         TableColumn<DiscountschemeDto, Button> column3 =
@@ -106,11 +131,47 @@ public class ManageDiscountsController {
                 });
     }
 
+    private void btnSaveChanges_Clicked(ActionEvent actionEvent) {
+        try {
+            var discountId = lblDiscountId.getText();
+            var priceDiscount = Double.parseDouble(txtDiscountPrice.getText());
+            var percentDiscount = Double.parseDouble(txtDiscountPercent.getText());
+            var startDt = dtStart.getValue();
+            var endDt = dtEnd.getValue();
+            var customerType = choiceCustomerType.getValue();
+            if (Objects.equals(discountId, "New") || Objects.equals(discountId, "") || Objects.equals(discountId, null)) {
+                var dto = new DiscountschemeDto(0, priceDiscount, percentDiscount, customerType, startDt, endDt);
+                DiscountschemeDto result = BrcmAPI.PostRequest(BrcmAPI.DiscountsUrl, dto, DiscountschemeDto.class);
+            } else {
+                var dto = new DiscountschemeDto(Integer.parseInt(discountId), priceDiscount, percentDiscount, customerType, startDt, endDt);
+                BrcmAPI.PutRequest(BrcmAPI.DiscountsUrl + discountId, dto);
+            }
+            refreshGrid();
+        } catch (NumberFormatException ex) {
+            throw new RuntimeException(ex);
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
     private void refreshGrid() {
-        
+        var dto = BrcmAPI.GetRequest(BrcmAPI.DiscountsUrl, DiscountschemeDto[].class);
+        if (dto != null) {
+            System.out.println(dto.length);
+            tableDiscounts.getItems().clear();
+            for (var d : dto) {
+                tableDiscounts.getItems().add(d);
+            }
+            selectionModel.select(0);
+        }
     }
 
     private void deleteDiscount(DiscountschemeDto p) {
-
+        try {
+            BrcmAPI.DeleteRequest(BrcmAPI.DiscountsUrl + p.getId().toString());
+            refreshGrid();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

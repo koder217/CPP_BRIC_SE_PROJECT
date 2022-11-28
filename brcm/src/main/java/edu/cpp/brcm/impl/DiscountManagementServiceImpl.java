@@ -6,11 +6,13 @@ import edu.cpp.brcm.entities.Discountscheme;
 import edu.cpp.brcm.repositories.DiscountSchemeRepository;
 import edu.cpp.brcm.services.DiscountManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class DiscountManagementServiceImpl implements DiscountManagementService {
     @Autowired
     private DiscountSchemeRepository discountSchemeRepository;

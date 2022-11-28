@@ -10,9 +10,11 @@ import java.util.Objects;
 public class BrcmAPI {
     public static final String ActivitiesUrl = "http://localhost:8080/api/v1/activities/";
     public static final String PriceHistoryUrl = "http://localhost:8080/api/v1/pricehistory/";
-
+    public static final String DiscountsUrl = "http://localhost:8080/api/v1/discounts/";
     public static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
+
+
     public static <T> T GetRequest(String url, Class<T> valueType) throws RuntimeException {
         OkHttpClient client = new OkHttpClient();
         ObjectMapper objectMapper = new ObjectMapper();
