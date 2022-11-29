@@ -6,8 +6,8 @@ import java.util.List;
 
 
 public interface CustomerManagementService {
-    int saveStudent(StudentDto student);
-    Integer saveProfessor(ProfessorDto professor);
+    StudentDto saveStudent(StudentDto student);
+    ProfessorDto saveProfessor(ProfessorDto professor);
     StudentDto getStudentByBroncoId(int id);
     ProfessorDto getProfessorByBroncoId(int id);
     void updateStudent(StudentDto student);

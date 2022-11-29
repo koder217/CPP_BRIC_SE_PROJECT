@@ -807,109 +807,112 @@
     <column id="COL224" populated="true" UUID="0715fc3d-6c9d-46ca-85e1-3fffb2da9b39" autoIncrement="false" autoIncrementSequenceName="Orders_DiscountSchemeId_seq" defaultValue="" name="DiscountSchemeId" nullable="0" physicalName="DiscountSchemeId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
+    <column id="COL225" populated="true" UUID="b55825ff-a9ca-44d5-bb50-4ce24c185b09" autoIncrement="false" autoIncrementSequenceName="Orders_customerType_seq" defaultValue="" name="customerType" nullable="1" physicalName="customerType" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
     </folder>
     <folder id="FOLTAB2173" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
     </folder>
     <folder id="FOLTAB2172" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB2174" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX225" populated="true" UUID="cea841bb-d8d4-4218-be7c-954e427b2dd8" clustered="false" name="Orders_pk" physicalName="orders_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC226" populated="true" UUID="320662ea-226c-4339-a8a5-33e5bf7dcc37" ascendingOrDescending="UNSPECIFIED" column-ref="COL218" name="id" physicalName="id" />
+    <index id="IDX226" populated="true" UUID="cea841bb-d8d4-4218-be7c-954e427b2dd8" clustered="false" name="Orders_pk" physicalName="orders_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC227" populated="true" UUID="320662ea-226c-4339-a8a5-33e5bf7dcc37" ascendingOrDescending="UNSPECIFIED" column-ref="COL218" name="id" physicalName="id" />
     </index>
    </folder>
   </table>
-  <table id="TAB227" populated="true" UUID="2a3020bc-f2a3-49c5-9a31-b6d9d81a58e5" name="LineItems" objectType="TABLE" physicalName="LineItems" >
+  <table id="TAB228" populated="true" UUID="2a3020bc-f2a3-49c5-9a31-b6d9d81a58e5" name="LineItems" objectType="TABLE" physicalName="LineItems" >
    <remarks></remarks>
-   <folder id="FOLTAB2271" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL228" populated="true" UUID="378cc769-1ea8-413c-8897-d5f731b03390" autoIncrement="true" autoIncrementSequenceName="LineItems_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="4" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+   <folder id="FOLTAB2281" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL229" populated="true" UUID="378cc769-1ea8-413c-8897-d5f731b03390" autoIncrement="true" autoIncrementSequenceName="LineItems_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="4" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL229" populated="true" UUID="befb5b28-b210-4277-a23b-064c2aac46f3" autoIncrement="false" autoIncrementSequenceName="LineItems_ActivityId_seq" defaultValue="" name="ActivityId" nullable="0" physicalName="ActivityId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL230" populated="true" UUID="befb5b28-b210-4277-a23b-064c2aac46f3" autoIncrement="false" autoIncrementSequenceName="LineItems_ActivityId_seq" defaultValue="" name="ActivityId" nullable="0" physicalName="ActivityId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL230" populated="true" UUID="8acac5ca-2c2e-45f0-9ecc-dc97302f89b6" autoIncrement="false" autoIncrementSequenceName="LineItems_Quantity_seq" defaultValue="" name="Quantity" nullable="0" physicalName="Quantity" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL231" populated="true" UUID="8acac5ca-2c2e-45f0-9ecc-dc97302f89b6" autoIncrement="false" autoIncrementSequenceName="LineItems_Quantity_seq" defaultValue="" name="Quantity" nullable="0" physicalName="Quantity" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL231" populated="true" UUID="2341023a-2574-4b33-bbe4-3d9df57e92c5" autoIncrement="false" autoIncrementSequenceName="LineItems_AppointmentId_seq" defaultValue="" name="AppointmentId" nullable="0" physicalName="AppointmentId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL232" populated="true" UUID="2341023a-2574-4b33-bbe4-3d9df57e92c5" autoIncrement="false" autoIncrementSequenceName="LineItems_AppointmentId_seq" defaultValue="" name="AppointmentId" nullable="0" physicalName="AppointmentId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL232" populated="true" UUID="d9e6100c-0c22-4718-bf4f-dafca331ed7d" autoIncrement="false" autoIncrementSequenceName="LineItems_OrderId_seq" defaultValue="" name="OrderId" nullable="0" physicalName="OrderId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL233" populated="true" UUID="d9e6100c-0c22-4718-bf4f-dafca331ed7d" autoIncrement="false" autoIncrementSequenceName="LineItems_OrderId_seq" defaultValue="" name="OrderId" nullable="0" physicalName="OrderId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>
-    <folder id="FOLTAB2273" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    <folder id="FOLTAB2283" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
     </folder>
-    <folder id="FOLTAB2272" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    <folder id="FOLTAB2282" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
-    <folder id="FOLTAB2274" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX233" populated="true" UUID="505b84db-4d61-426e-a99c-9ed0962c068c" clustered="false" name="LineItems_pk" physicalName="lineitems_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC234" populated="true" UUID="b119ef19-afe0-4246-a3e3-23e29860549e" ascendingOrDescending="UNSPECIFIED" column-ref="COL228" name="id" physicalName="id" />
+    <folder id="FOLTAB2284" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX234" populated="true" UUID="505b84db-4d61-426e-a99c-9ed0962c068c" clustered="false" name="LineItems_pk" physicalName="lineitems_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC235" populated="true" UUID="b119ef19-afe0-4246-a3e3-23e29860549e" ascendingOrDescending="UNSPECIFIED" column-ref="COL229" name="id" physicalName="id" />
     </index>
    </folder>
   </table>
-  <table id="TAB235" populated="true" UUID="249e0595-ee6a-4eeb-9f1c-311175da953b" name="Appointments" objectType="TABLE" physicalName="Appointments" >
+  <table id="TAB236" populated="true" UUID="249e0595-ee6a-4eeb-9f1c-311175da953b" name="Appointments" objectType="TABLE" physicalName="Appointments" >
    <remarks></remarks>
-   <folder id="FOLTAB2351" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL236" populated="true" UUID="cf467287-d353-4783-a565-744273862c00" autoIncrement="true" autoIncrementSequenceName="Appointments_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+   <folder id="FOLTAB2361" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL237" populated="true" UUID="cf467287-d353-4783-a565-744273862c00" autoIncrement="true" autoIncrementSequenceName="Appointments_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL237" populated="true" UUID="c61430aa-41cb-44aa-b7b6-852db8430433" autoIncrement="false" autoIncrementSequenceName="Appointments_StartTime_seq" defaultValue="" name="StartTime" nullable="0" physicalName="StartTime" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+    <column id="COL238" populated="true" UUID="c61430aa-41cb-44aa-b7b6-852db8430433" autoIncrement="false" autoIncrementSequenceName="Appointments_StartTime_seq" defaultValue="" name="StartTime" nullable="0" physicalName="StartTime" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
      <remarks></remarks>
     </column>
-    <column id="COL238" populated="true" UUID="15520c61-465b-4b61-8e3c-f1133a26cd5d" autoIncrement="false" autoIncrementSequenceName="Appointments_EndTime_seq" defaultValue="" name="EndTime" nullable="0" physicalName="EndTime" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+    <column id="COL239" populated="true" UUID="15520c61-465b-4b61-8e3c-f1133a26cd5d" autoIncrement="false" autoIncrementSequenceName="Appointments_EndTime_seq" defaultValue="" name="EndTime" nullable="0" physicalName="EndTime" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
      <remarks></remarks>
     </column>
-    <column id="COL239" populated="true" UUID="ea9d1b8a-bfb0-4581-9646-3d45f3254b5d" autoIncrement="false" autoIncrementSequenceName="Appointments_ActivityId_seq" defaultValue="" name="ActivityId" nullable="0" physicalName="ActivityId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL240" populated="true" UUID="ea9d1b8a-bfb0-4581-9646-3d45f3254b5d" autoIncrement="false" autoIncrementSequenceName="Appointments_ActivityId_seq" defaultValue="" name="ActivityId" nullable="0" physicalName="ActivityId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL240" populated="true" UUID="bcc446d6-af14-40f6-9de1-c8a97b0b0080" autoIncrement="false" autoIncrementSequenceName="Appointments_CustomerId_seq" defaultValue="" name="CustomerId" nullable="0" physicalName="CustomerId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL241" populated="true" UUID="bcc446d6-af14-40f6-9de1-c8a97b0b0080" autoIncrement="false" autoIncrementSequenceName="Appointments_CustomerId_seq" defaultValue="" name="CustomerId" nullable="0" physicalName="CustomerId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL241" populated="true" UUID="28ba76d6-0915-4e2f-8b82-b9611d486faa" autoIncrement="false" autoIncrementSequenceName="Appointments_status_seq" defaultValue="" name="status" nullable="1" physicalName="status" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL242" populated="true" UUID="28ba76d6-0915-4e2f-8b82-b9611d486faa" autoIncrement="false" autoIncrementSequenceName="Appointments_status_seq" defaultValue="" name="status" nullable="1" physicalName="status" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
-    <folder id="FOLTAB2353" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    <folder id="FOLTAB2363" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
     </folder>
-    <folder id="FOLTAB2352" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    <folder id="FOLTAB2362" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
-    <folder id="FOLTAB2354" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX242" populated="true" UUID="b4516abd-c745-4d78-8ec7-51742ae30c52" clustered="false" name="Appointments_pk" physicalName="appointments_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC243" populated="true" UUID="cab84aea-ad1b-43ae-add3-0b7ff4ac6d64" ascendingOrDescending="UNSPECIFIED" column-ref="COL236" name="id" physicalName="id" />
+    <folder id="FOLTAB2364" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX243" populated="true" UUID="b4516abd-c745-4d78-8ec7-51742ae30c52" clustered="false" name="Appointments_pk" physicalName="appointments_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC244" populated="true" UUID="cab84aea-ad1b-43ae-add3-0b7ff4ac6d64" ascendingOrDescending="UNSPECIFIED" column-ref="COL237" name="id" physicalName="id" />
     </index>
    </folder>
   </table>
   <relationships>
-   <relationship id="REL244" populated="true" UUID="27275a2e-9a0f-499a-8b64-e49fd4206377" deferrability="7" deleteRule="3" fk-table-ref="TAB217" fkCardinality="7" identifying="true" name="Customers_Orders_fk" physicalName="Customers_Orders_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP245" populated="true" UUID="37b0ec4a-22da-44db-ac68-5903697bf438" fk-column-ref="COL221" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL178" />
+   <relationship id="REL245" populated="true" UUID="27275a2e-9a0f-499a-8b64-e49fd4206377" deferrability="7" deleteRule="3" fk-table-ref="TAB217" fkCardinality="7" identifying="true" name="Customers_Orders_fk" physicalName="customers_orders_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP246" populated="true" UUID="37b0ec4a-22da-44db-ac68-5903697bf438" fk-column-ref="COL221" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL178" />
    </relationship>
-   <relationship id="REL246" populated="true" UUID="8b06a95b-ca37-4901-a817-c08b299ebecc" deferrability="7" deleteRule="3" fk-table-ref="TAB169" fkCardinality="7" identifying="true" name="Customers_Students_fk" physicalName="Customers_Students_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP247" populated="true" UUID="bc869b75-4d71-41fd-92f5-80a37de9598f" fk-column-ref="COL170" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL178" />
+   <relationship id="REL247" populated="true" UUID="8b06a95b-ca37-4901-a817-c08b299ebecc" deferrability="7" deleteRule="3" fk-table-ref="TAB169" fkCardinality="7" identifying="true" name="Customers_Students_fk" physicalName="customers_students_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP248" populated="true" UUID="bc869b75-4d71-41fd-92f5-80a37de9598f" fk-column-ref="COL170" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL178" />
    </relationship>
-   <relationship id="REL248" populated="true" UUID="b173357c-d281-4ff2-aef6-60251c637bab" deferrability="7" deleteRule="3" fk-table-ref="TAB162" fkCardinality="7" identifying="true" name="Customers_Professors_fk" physicalName="Customers_Professors_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP249" populated="true" UUID="33eb0a74-dab7-4409-8dab-30e492b5148d" fk-column-ref="COL163" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL178" />
+   <relationship id="REL249" populated="true" UUID="b173357c-d281-4ff2-aef6-60251c637bab" deferrability="7" deleteRule="3" fk-table-ref="TAB162" fkCardinality="7" identifying="true" name="Customers_Professors_fk" physicalName="customers_professors_fk" pk-table-ref="TAB177" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP250" populated="true" UUID="33eb0a74-dab7-4409-8dab-30e492b5148d" fk-column-ref="COL163" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL178" />
    </relationship>
-   <relationship id="REL250" populated="true" UUID="3a0ec06e-2a73-4e83-9754-0cf2f7558f63" deferrability="7" deleteRule="3" fk-table-ref="TAB177" fkCardinality="7" identifying="true" name="Addresses_Customers_fk" physicalName="Addresses_Customers_fk" pk-table-ref="TAB186" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP251" populated="true" UUID="f1a63702-6a38-4bdf-b4ed-33df637115d1" fk-column-ref="COL183" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL187" />
+   <relationship id="REL251" populated="true" UUID="3a0ec06e-2a73-4e83-9754-0cf2f7558f63" deferrability="7" deleteRule="3" fk-table-ref="TAB177" fkCardinality="7" identifying="true" name="Addresses_Customers_fk" physicalName="addresses_customers_fk" pk-table-ref="TAB186" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP252" populated="true" UUID="f1a63702-6a38-4bdf-b4ed-33df637115d1" fk-column-ref="COL183" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL187" />
    </relationship>
-   <relationship id="REL252" populated="true" UUID="5e5ca12b-6c03-4be4-b1c9-c4fc7d8826cf" deferrability="7" deleteRule="3" fk-table-ref="TAB217" fkCardinality="7" identifying="true" name="DiscountScheme_Orders_fk" physicalName="DiscountScheme_Orders_fk" pk-table-ref="TAB195" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP253" populated="true" UUID="3ff2d20f-9253-46f0-8363-80c16fe779c9" fk-column-ref="COL224" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL196" />
+   <relationship id="REL253" populated="true" UUID="5e5ca12b-6c03-4be4-b1c9-c4fc7d8826cf" deferrability="7" deleteRule="3" fk-table-ref="TAB217" fkCardinality="7" identifying="true" name="DiscountScheme_Orders_fk" physicalName="discountscheme_orders_fk" pk-table-ref="TAB195" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP254" populated="true" UUID="3ff2d20f-9253-46f0-8363-80c16fe779c9" fk-column-ref="COL224" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL196" />
    </relationship>
-   <relationship id="REL254" populated="true" UUID="6b56258e-8f4f-4ffe-b8ad-21b2a5f3bd61" deferrability="7" deleteRule="3" fk-table-ref="TAB210" fkCardinality="7" identifying="true" name="Activities_HistoricalPrice_fk" physicalName="Activities_HistoricalPrice_fk" pk-table-ref="TAB204" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP255" populated="true" UUID="aea03873-1f2a-47f3-a335-7bb356da17a3" fk-column-ref="COL214" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL205" />
+   <relationship id="REL255" populated="true" UUID="6b56258e-8f4f-4ffe-b8ad-21b2a5f3bd61" deferrability="7" deleteRule="3" fk-table-ref="TAB210" fkCardinality="7" identifying="true" name="Activities_HistoricalPrice_fk" physicalName="activities_historicalprice_fk" pk-table-ref="TAB204" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP256" populated="true" UUID="aea03873-1f2a-47f3-a335-7bb356da17a3" fk-column-ref="COL214" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL205" />
    </relationship>
-   <relationship id="REL256" populated="true" UUID="7b406951-2b45-4a42-a83e-a9405dc90989" deferrability="7" deleteRule="3" fk-table-ref="TAB227" fkCardinality="7" identifying="true" name="Activities_LineItems_fk" physicalName="Activities_LineItems_fk" pk-table-ref="TAB204" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP257" populated="true" UUID="29b5df45-8f46-4bf5-8c9a-8bb2ec76d96c" fk-column-ref="COL229" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL205" />
+   <relationship id="REL257" populated="true" UUID="7b406951-2b45-4a42-a83e-a9405dc90989" deferrability="7" deleteRule="3" fk-table-ref="TAB228" fkCardinality="7" identifying="true" name="Activities_LineItems_fk" physicalName="activities_lineitems_fk" pk-table-ref="TAB204" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP258" populated="true" UUID="29b5df45-8f46-4bf5-8c9a-8bb2ec76d96c" fk-column-ref="COL230" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL205" />
    </relationship>
-   <relationship id="REL258" populated="true" UUID="3fb93eec-d832-4734-be5b-2f74deaa821b" deferrability="7" deleteRule="3" fk-table-ref="TAB227" fkCardinality="7" identifying="true" name="Orders_LineItems_fk" physicalName="Orders_LineItems_fk" pk-table-ref="TAB217" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP259" populated="true" UUID="b93ba463-fe7d-44b4-b5e7-3a81074dcdda" fk-column-ref="COL232" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL218" />
+   <relationship id="REL259" populated="true" UUID="3fb93eec-d832-4734-be5b-2f74deaa821b" deferrability="7" deleteRule="3" fk-table-ref="TAB228" fkCardinality="7" identifying="true" name="Orders_LineItems_fk" physicalName="orders_lineitems_fk" pk-table-ref="TAB217" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP260" populated="true" UUID="b93ba463-fe7d-44b4-b5e7-3a81074dcdda" fk-column-ref="COL233" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL218" />
    </relationship>
-   <relationship id="REL260" populated="true" UUID="acd37020-7d63-4d41-a0a6-0d978c211685" deferrability="7" deleteRule="3" fk-table-ref="TAB227" fkCardinality="7" identifying="true" name="Appointments_LineItems_fk" physicalName="Appointments_LineItems_fk" pk-table-ref="TAB235" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP261" populated="true" UUID="bddfc5e2-e17e-405a-94ce-d71d09141cf2" fk-column-ref="COL231" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL236" />
+   <relationship id="REL261" populated="true" UUID="acd37020-7d63-4d41-a0a6-0d978c211685" deferrability="7" deleteRule="3" fk-table-ref="TAB228" fkCardinality="7" identifying="true" name="Appointments_LineItems_fk" physicalName="appointments_lineitems_fk" pk-table-ref="TAB236" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP262" populated="true" UUID="bddfc5e2-e17e-405a-94ce-d71d09141cf2" fk-column-ref="COL232" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL237" />
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
@@ -921,17 +924,17 @@
   <table-pane table-ref="TAB204" x="33" y="273" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB210" x="20" y="457" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB217" x="601" y="239" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB227" x="290" y="454" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB235" x="312" y="260" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-link relationship-ref="REL258" pkConnection="0.03355704697986577" fkConnection="0.9127272727272727" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL252" pkConnection="0.9214876033057852" fkConnection="0.7651006711409396" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL244" pkConnection="0.8317757009345794" fkConnection="0.15100671140939598" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL254" pkConnection="0.17098445595854922" fkConnection="0.1908713692946058" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL256" pkConnection="0.533678756476684" fkConnection="0.08727272727272728" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL260" pkConnection="0.19457013574660634" fkConnection="0.23636363636363636" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL246" pkConnection="0.8740157480314961" fkConnection="0.21621621621621623" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
-  <table-link relationship-ref="REL248" pkConnection="0.2440944881889764" fkConnection="0.5473684210526316" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
-  <table-link relationship-ref="REL250" pkConnection="0.4881889763779528" fkConnection="0.5039370078740157" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-pane table-ref="TAB228" x="290" y="454" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB236" x="312" y="260" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL259" pkConnection="0.03355704697986577" fkConnection="0.9127272727272727" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL253" pkConnection="0.9214876033057852" fkConnection="0.7651006711409396" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL245" pkConnection="0.8317757009345794" fkConnection="0.15100671140939598" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL255" pkConnection="0.17098445595854922" fkConnection="0.1908713692946058" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL257" pkConnection="0.533678756476684" fkConnection="0.08727272727272728" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL261" pkConnection="0.19457013574660634" fkConnection="0.23636363636363636" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL247" pkConnection="0.8740157480314961" fkConnection="0.21621621621621623" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL249" pkConnection="0.2440944881889764" fkConnection="0.5473684210526316" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL251" pkConnection="0.4881889763779528" fkConnection="0.5039370078740157" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">

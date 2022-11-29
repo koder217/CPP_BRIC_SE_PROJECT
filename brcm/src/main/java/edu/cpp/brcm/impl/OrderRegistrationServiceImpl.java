@@ -72,6 +72,7 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService {
         }
         //create order first, appointments next, then line items.
         Order o = new Order();
+        o.setCustomerType(visitDto.customerType.toString());
         o.setDate(LocalDate.now());
         o.setTime(LocalTime.now());
         o.setCustomerid(customer);

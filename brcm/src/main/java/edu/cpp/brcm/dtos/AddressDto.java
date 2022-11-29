@@ -13,6 +13,14 @@ public class AddressDto implements Serializable {
     private final String city;
     private final String state;
 
+    public AddressDto(){
+        this.id = 0;
+        this.street = "";
+        this.number = "";
+        this.zipcode = 0;
+        this.city = "";
+        this.state = "";
+    }
     public AddressDto(Integer id, String street, String number, Integer zipcode, String city, String state) {
         this.id = id;
         this.street = street;

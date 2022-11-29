@@ -91,6 +91,7 @@ CREATE TABLE Orders (
                 Date DATE NOT NULL,
                 Time TIME NOT NULL,
                 CustomerId INTEGER NOT NULL,
+				CustomerType VARCHAR,
                 DiscountApplied DOUBLE PRECISION NOT NULL,
                 TotalPrice VARCHAR NOT NULL,
                 DiscountSchemeId INTEGER NOT NULL,

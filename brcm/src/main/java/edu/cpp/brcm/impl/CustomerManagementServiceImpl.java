@@ -30,21 +30,21 @@ public class CustomerManagementServiceImpl implements CustomerManagementService 
     private AddressRepository addressRepository;
 
     @Override
-    public int saveStudent(StudentDto student) {
+    public StudentDto saveStudent(StudentDto student) {
         Student s = Mapper.toEntity(student);
         Address a = addressRepository.save(s.getCustomers().getAddressid());
         s.getCustomers().setAddressid(a);
         Student resp = studentRepository.save(s);
-        return resp.getId();
+        return Mapper.toDTO(resp);
     }
 
     @Override
-    public Integer saveProfessor(ProfessorDto professor) {
+    public ProfessorDto saveProfessor(ProfessorDto professor) {
         Professor p = Mapper.toEntity(professor);
         Address a = addressRepository.save(p.getCustomers().getAddressid());
         p.getCustomers().setAddressid(a);
         Professor resp = professorRepository.save(p);
-        return resp.getId();
+        return Mapper.toDTO(resp);
     }
 
     @Override

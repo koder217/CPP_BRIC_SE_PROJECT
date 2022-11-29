@@ -9,7 +9,7 @@ import javax.persistence.EntityManagerFactory;
 public class Hibernate {
     private static SessionFactory factory;
     static {
-        factory = new Configuration().configure().buildSessionFactory();
+        factory = new Configuration().buildSessionFactory();
     }
     public static Session getSession(){
         return factory.openSession();

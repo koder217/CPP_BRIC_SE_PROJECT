@@ -52,7 +52,7 @@ public class ManageActivitiesController {
                 new PropertyValueFactory<>("price"));
         TableColumn<ActivityDto, Button> column3 =
                 new TableColumn<>("Delete");
-        column3.setCellFactory(ActionButtonTableCell.<ActivityDto>forTableColumn("Remove", (ActivityDto p) -> {
+        column3.setCellFactory(DeleteButtonTableCell.<ActivityDto>forTableColumn("Remove", (ActivityDto p) -> {
             deleteActivity(p);
             return p;
         }));

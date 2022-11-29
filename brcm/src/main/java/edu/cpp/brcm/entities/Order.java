@@ -1,5 +1,7 @@
 package edu.cpp.brcm.entities;
 
+import edu.cpp.brcm.enums.CustomerType;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -31,6 +33,9 @@ public class Order {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "discountschemeid", nullable = false)
     private Discountscheme discountschemeid;
+
+    @Column(name = "customertype", nullable = false)
+    private String customerType;
 
     public Integer getId() {
         return id;
@@ -88,4 +93,10 @@ public class Order {
         this.discountschemeid = discountschemeid;
     }
 
+    public void setCustomerType(String customerType) {
+        this.customerType = customerType;
+    }
+    public String getCustomerType() {
+        return this.customerType;
+    }
 }

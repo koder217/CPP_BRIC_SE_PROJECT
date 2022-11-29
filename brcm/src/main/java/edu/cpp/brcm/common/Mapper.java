@@ -78,9 +78,9 @@ public class Mapper {
         c.setAddressid(Mapper.toEntity(professorDto.getAddress()));
         Professor p = new Professor();
         p.setCustomers(c);
-        p.setDepartment(p.getDepartment());
-        p.setOffice(p.getOffice());
-        p.setResearch(p.getResearch());
+        p.setDepartment(professorDto.getDepartment());
+        p.setOffice(professorDto.getOffice());
+        p.setResearch(professorDto.getResearch());
         return p;
     }
 

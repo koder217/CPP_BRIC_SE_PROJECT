@@ -3,256 +3,263 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<TabPane fx:controller="edu.cpp.brcm.frontend.ManageCustomersController" maxHeight="-Infinity" maxWidth="-Infinity"
-         minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE"
-         xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea">
-    <tabs>
-        <Tab text="Students">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <ToolBar prefHeight="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                            <items>
-                                <Button fx:id="btnAddNewStudent" mnemonicParsing="false" text="Add New Student" defaultButton="true" />
-                                <Button fx:id="btnRefreshStudents" mnemonicParsing="false" text="Refresh" />
-                            </items>
-                        </ToolBar>
-                        <TableView fx:id="tableStudents" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
-                    </children>
-                </AnchorPane>
-            </content>
-        </Tab>
-        <Tab text="Professors">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <ToolBar prefHeight="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                            <items>
-                                <Button fx:id="btnAddNewProfessor" mnemonicParsing="false" text="Add New Professor" defaultButton="true" />
-                                <Button fx:id="btnRefreshProfessors" mnemonicParsing="false" text="Refresh" />
-                            </items>
-                        </ToolBar>
-                        <TableView fx:id="tableProfessors" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
-                    </children>
-                </AnchorPane>
-            </content>
-        </Tab>
-        <Tab text="Add New Customer">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <VBox>
-                            <HBox>
+<AnchorPane fx:controller="edu.cpp.brcm.frontend.ManageCustomersController" maxHeight="-Infinity" maxWidth="-Infinity"
+             minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+             xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" >
+    <children>
+        <TabPane maxHeight="-Infinity" maxWidth="-Infinity" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                 minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE"
+                 fx:id="tabsContainer">
+            <tabs>
+                <Tab text="Students">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ToolBar prefHeight="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <items>
+                                        <Button fx:id="btnAddNewStudent" mnemonicParsing="false" text="Add New Student" defaultButton="true" />
+                                        <Button fx:id="btnRefreshStudents" mnemonicParsing="false" text="Refresh" />
+                                    </items>
+                                </ToolBar>
+                                <TableView fx:id="tableStudents" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Professors">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ToolBar prefHeight="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <items>
+                                        <Button fx:id="btnAddNewProfessor" mnemonicParsing="false" text="Add New Professor" defaultButton="true" />
+                                        <Button fx:id="btnRefreshProfessors" mnemonicParsing="false" text="Refresh" />
+                                    </items>
+                                </ToolBar>
+                                <TableView fx:id="tableProfessors" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Add/Update Customer">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
                                 <VBox>
-                                    <Label text="Id:">
+                                    <HBox>
+                                        <VBox>
+                                            <Label text="Id:">
+                                                <VBox.margin>
+                                                    <Insets bottom="5.0" left="15.0" right="5.0" top="10.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <Label fx:id="lblStudentProfessorId">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <Label text="First Name:">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="10.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <TextField fx:id="txtFirstName" maxWidth="200">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="5.0"/>
+                                                </VBox.margin>
+                                            </TextField>
+                                            <Label text="Last Name:">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="10.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <TextField fx:id="txtLastName" maxWidth="200">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="5.0"/>
+                                                </VBox.margin>
+                                            </TextField>
+                                            <Label text="Phone:">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="10.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <TextField fx:id="txtPhone" maxWidth="200">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="5.0"/>
+                                                </VBox.margin>
+                                            </TextField>
+                                            <Label text="Date of Birth:">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="10.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <DatePicker fx:id="dtDob" maxWidth="200">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="5.0"/>
+                                                </VBox.margin>
+                                            </DatePicker>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="Street:">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="10.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <TextField fx:id="txtStreet" maxWidth="200">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="5.0"/>
+                                                </VBox.margin>
+                                            </TextField>
+                                            <Label text="Number:">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="10.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <TextField fx:id="txtNumber" maxWidth="200">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="5.0"/>
+                                                </VBox.margin>
+                                            </TextField>
+                                            <Label text="Zipcode:">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="10.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <TextField fx:id="txtZip" maxWidth="200">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="5.0"/>
+                                                </VBox.margin>
+                                            </TextField>
+                                            <Label text="City:">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="10.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <TextField fx:id="txtCity" maxWidth="200">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="5.0"/>
+                                                </VBox.margin>
+                                            </TextField>
+                                            <Label text="State:">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="10.0"/>
+                                                </VBox.margin>
+                                            </Label>
+                                            <TextField fx:id="txtState" maxWidth="200">
+                                                <VBox.margin>
+                                                    <Insets left="15.0" right="5.0" top="5.0"/>
+                                                </VBox.margin>
+                                            </TextField>
+                                        </VBox>
+                                    </HBox>
+                                    <VBox>
+                                        <HBox>
+                                            <Label text="Customer Type:">
+                                                <HBox.margin>
+                                                    <Insets left="85.0" right="10.0" top="25.0" bottom="20.0"/>
+                                                </HBox.margin>
+                                            </Label>
+                                            <ChoiceBox fx:id="choiceCustomerType" prefWidth="150.0">
+                                                <HBox.margin>
+                                                    <Insets bottom="20.0" top="20.0"/>
+                                                </HBox.margin>
+                                            </ChoiceBox>
+                                        </HBox>
+                                        <HBox fx:id="professorControls" visible="false">
+                                            <VBox>
+                                                <Label text="Department:">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="10.0"/>
+                                                    </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="txtDepartment" maxWidth="200">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="5.0"/>
+                                                    </VBox.margin>
+                                                </TextField>
+                                                <Label text="Office:">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="10.0"/>
+                                                    </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="txtOffice" maxWidth="200">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="5.0"/>
+                                                    </VBox.margin>
+                                                </TextField>
+                                            </VBox>
+                                            <VBox>
+                                                <Label text="Research:">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="10.0"/>
+                                                    </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="txtResearch" maxWidth="200">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="5.0"/>
+                                                    </VBox.margin>
+                                                </TextField>
+                                            </VBox>
+                                        </HBox>
+                                        <HBox fx:id="studentControls">
+                                            <VBox>
+                                                <Label text="Major:">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="10.0"/>
+                                                    </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="txtMajor" maxWidth="200">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="5.0"/>
+                                                    </VBox.margin>
+                                                </TextField>
+                                                <Label text="Minor:">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="10.0"/>
+                                                    </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="txtMinor" maxWidth="200">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="5.0"/>
+                                                    </VBox.margin>
+                                                </TextField>
+                                            </VBox>
+                                            <VBox>
+                                                <Label text="Enter Date:">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="10.0"/>
+                                                    </VBox.margin>
+                                                </Label>
+                                                <DatePicker fx:id="dtEnter" maxWidth="200">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="5.0"/>
+                                                    </VBox.margin>
+                                                </DatePicker>
+                                                <Label text="Grad Date:">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="10.0"/>
+                                                    </VBox.margin>
+                                                </Label>
+                                                <DatePicker fx:id="dtGrad" maxWidth="200">
+                                                    <VBox.margin>
+                                                        <Insets left="15.0" right="5.0" top="5.0"/>
+                                                    </VBox.margin>
+                                                </DatePicker>
+                                            </VBox>
+                                        </HBox>
+                                    </VBox>
+                                    <Button fx:id="btnSaveChanges" defaultButton="true" mnemonicParsing="false" text="Save Changes">
                                         <VBox.margin>
-                                            <Insets bottom="5.0" left="15.0" right="5.0" top="10.0"/>
+                                            <Insets bottom="5.0" left="155.0" right="5.0" top="35.0"/>
                                         </VBox.margin>
-                                    </Label>
-                                    <Label fx:id="lblStudentProfessorId">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0"/>
-                                        </VBox.margin>
-                                    </Label>
-                                    <Label text="First Name:">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="10.0"/>
-                                        </VBox.margin>
-                                    </Label>
-                                    <TextField fx:id="txtFirstName" maxWidth="200">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="5.0"/>
-                                        </VBox.margin>
-                                    </TextField>
-                                    <Label text="Last Name:">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="10.0"/>
-                                        </VBox.margin>
-                                    </Label>
-                                    <TextField fx:id="txtLastName" maxWidth="200">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="5.0"/>
-                                        </VBox.margin>
-                                    </TextField>
-                                    <Label text="Phone:">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="10.0"/>
-                                        </VBox.margin>
-                                    </Label>
-                                    <TextField fx:id="txtPhone" maxWidth="200">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="5.0"/>
-                                        </VBox.margin>
-                                    </TextField>
-                                    <Label text="Date of Birth:">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="10.0"/>
-                                        </VBox.margin>
-                                    </Label>
-                                    <DatePicker fx:id="dtDob" maxWidth="200">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="5.0"/>
-                                        </VBox.margin>
-                                    </DatePicker>
+                                    </Button>
                                 </VBox>
-                                <VBox>
-                                    <Label text="Street:">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="10.0"/>
-                                        </VBox.margin>
-                                    </Label>
-                                    <TextField fx:id="txtStreet" maxWidth="200">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="5.0"/>
-                                        </VBox.margin>
-                                    </TextField>
-                                    <Label text="Number:">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="10.0"/>
-                                        </VBox.margin>
-                                    </Label>
-                                    <TextField fx:id="txtNumber" maxWidth="200">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="5.0"/>
-                                        </VBox.margin>
-                                    </TextField>
-                                    <Label text="Zipcode:">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="10.0"/>
-                                        </VBox.margin>
-                                    </Label>
-                                    <TextField fx:id="txtZip" maxWidth="200">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="5.0"/>
-                                        </VBox.margin>
-                                    </TextField>
-                                    <Label text="City:">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="10.0"/>
-                                        </VBox.margin>
-                                    </Label>
-                                    <TextField fx:id="txtCity" maxWidth="200">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="5.0"/>
-                                        </VBox.margin>
-                                    </TextField>
-                                    <Label text="State:">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="10.0"/>
-                                        </VBox.margin>
-                                    </Label>
-                                    <TextField fx:id="txtState" maxWidth="200">
-                                        <VBox.margin>
-                                            <Insets left="15.0" right="5.0" top="5.0"/>
-                                        </VBox.margin>
-                                    </TextField>
-                                </VBox>
-                            </HBox>
-                            <VBox>
-                                <HBox>
-                                    <Label text="Customer Type:">
-                                        <HBox.margin>
-                                            <Insets left="85.0" right="10.0" top="25.0" bottom="20.0"/>
-                                        </HBox.margin>
-                                    </Label>
-                                    <ChoiceBox fx:id="choiceCustomerType" prefWidth="150.0">
-                                        <HBox.margin>
-                                            <Insets bottom="20.0" top="20.0"/>
-                                        </HBox.margin>
-                                    </ChoiceBox>
-                                </HBox>
-                                <HBox fx:id="professorControls" visible="false">
-                                    <VBox>
-                                        <Label text="Department:">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="10.0"/>
-                                            </VBox.margin>
-                                        </Label>
-                                        <TextField fx:id="txtDepartment" maxWidth="200">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="5.0"/>
-                                            </VBox.margin>
-                                        </TextField>
-                                        <Label text="Office:">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="10.0"/>
-                                            </VBox.margin>
-                                        </Label>
-                                        <TextField fx:id="txtOffice" maxWidth="200">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="5.0"/>
-                                            </VBox.margin>
-                                        </TextField>
-                                    </VBox>
-                                    <VBox>
-                                        <Label text="Research:">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="10.0"/>
-                                            </VBox.margin>
-                                        </Label>
-                                        <TextField fx:id="txtResearch" maxWidth="200">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="5.0"/>
-                                            </VBox.margin>
-                                        </TextField>
-                                    </VBox>
-                                </HBox>
-                                <HBox fx:id="studentControls">
-                                    <VBox>
-                                        <Label text="Major:">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="10.0"/>
-                                            </VBox.margin>
-                                        </Label>
-                                        <TextField fx:id="txtMajor" maxWidth="200">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="5.0"/>
-                                            </VBox.margin>
-                                        </TextField>
-                                        <Label text="Minor:">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="10.0"/>
-                                            </VBox.margin>
-                                        </Label>
-                                        <TextField fx:id="txtMinor" maxWidth="200">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="5.0"/>
-                                            </VBox.margin>
-                                        </TextField>
-                                    </VBox>
-                                    <VBox>
-                                        <Label text="Enter Date:">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="10.0"/>
-                                            </VBox.margin>
-                                        </Label>
-                                        <DatePicker fx:id="dtEnter" maxWidth="200">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="5.0"/>
-                                            </VBox.margin>
-                                        </DatePicker>
-                                        <Label text="Grad Date:">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="10.0"/>
-                                            </VBox.margin>
-                                        </Label>
-                                        <DatePicker fx:id="dtGrad" maxWidth="200">
-                                            <VBox.margin>
-                                                <Insets left="15.0" right="5.0" top="5.0"/>
-                                            </VBox.margin>
-                                        </DatePicker>
-                                    </VBox>
-                                </HBox>
-                            </VBox>
-                            <Button fx:id="btnSaveChanges" defaultButton="true" mnemonicParsing="false" text="Save Changes">
-                                <VBox.margin>
-                                    <Insets bottom="5.0" left="155.0" right="5.0" top="35.0"/>
-                                </VBox.margin>
-                            </Button>
-                        </VBox>
-                    </children>
-                </AnchorPane>
-            </content>
-        </Tab>
-    </tabs>
-</TabPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
+

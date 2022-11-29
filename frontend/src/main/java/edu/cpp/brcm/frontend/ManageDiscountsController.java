@@ -94,7 +94,7 @@ public class ManageDiscountsController {
 
         TableColumn<DiscountschemeDto, Button> column3 =
                 new TableColumn<>("Delete");
-        column3.setCellFactory(ActionButtonTableCell.<DiscountschemeDto>forTableColumn("Remove", (DiscountschemeDto p) -> {
+        column3.setCellFactory(DeleteButtonTableCell.<DiscountschemeDto>forTableColumn("Remove", (DiscountschemeDto p) -> {
             deleteDiscount(p);
             return p;
         }));

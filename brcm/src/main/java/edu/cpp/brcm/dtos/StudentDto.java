@@ -15,6 +15,22 @@ public class StudentDto extends CustomerDto implements Serializable {
     private final String minor;
     private final LocalDate graddate;
 
+    public StudentDto(){
+        super(0,"","",LocalDate.MIN,"",new AddressDto(0,"","",0,"",""));
+        this.id = 0;
+        this.enterdate = LocalDate.MIN;
+        this.major = "";
+        this.minor = "";
+        this.graddate = LocalDate.MAX;
+    }
+    public StudentDto(Integer id, LocalDate enterdate, String major, String minor, LocalDate graddate, CustomerDto customerDto){
+        super(customerDto.getId(), customerDto.getFirstname(), customerDto.getLastname(), customerDto.getDateofbirth(), customerDto.getPhone(), customerDto.getAddress());
+        this.id = id;
+        this.enterdate = enterdate;
+        this.major = major;
+        this.minor = minor;
+        this.graddate = graddate;
+    }
     public StudentDto(Integer id, LocalDate enterdate, String major, String minor, LocalDate graddate, String firstname, String lastname, LocalDate dateofbirth, String phone, AddressDto addressDto) {
         super(id, firstname, lastname, dateofbirth, phone, addressDto);
         this.id = id;
