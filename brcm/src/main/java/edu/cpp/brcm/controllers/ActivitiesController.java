@@ -1,15 +1,13 @@
 package edu.cpp.brcm.controllers;
 
 import edu.cpp.brcm.dtos.ActivityDto;
-import edu.cpp.brcm.dtos.StudentDto;
 import edu.cpp.brcm.services.ActivityRegistrationService;
-import edu.cpp.brcm.services.CustomerManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@RestController("Activities")
 @RequestMapping("/api/v1")
 public class ActivitiesController {
     @Autowired
