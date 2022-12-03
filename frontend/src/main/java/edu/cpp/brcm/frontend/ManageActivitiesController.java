@@ -128,7 +128,7 @@ public class ManageActivitiesController {
             refreshGrid();
         }
         catch (NumberFormatException ex) {
-            throw new RuntimeException(ex);
+            ErrorUtil.showError("Invalid Price. Please enter a dollar amount");
         }
         catch (IOException ex) {
             throw new RuntimeException(ex);

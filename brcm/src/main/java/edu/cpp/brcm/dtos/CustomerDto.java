@@ -1,5 +1,6 @@
 package edu.cpp.brcm.dtos;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -8,6 +9,7 @@ import java.time.LocalDate;
  */
 public class CustomerDto implements Serializable {
     private final Integer id;
+    @NotBlank(message = "First name cannot be empty!")
     private final String firstname;
     private final String lastname;
     private final LocalDate dateofbirth;

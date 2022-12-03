@@ -148,7 +148,7 @@ public class ManageDiscountsController {
             }
             refreshGrid();
         } catch (NumberFormatException ex) {
-            throw new RuntimeException(ex);
+            ErrorUtil.showError("Invalid Discount Price or Percent. Please enter a dollar amount for price and a number below 100 for percent");
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }

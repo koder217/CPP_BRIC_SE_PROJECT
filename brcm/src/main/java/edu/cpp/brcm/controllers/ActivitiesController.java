@@ -5,6 +5,7 @@ import edu.cpp.brcm.services.ActivityRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController("Activities")
@@ -26,7 +27,7 @@ public class ActivitiesController {
     }
 
     @PostMapping("/activities")
-    public ActivityDto postActivity(@RequestBody ActivityDto activityDto){
+    public ActivityDto postActivity(@Valid @RequestBody ActivityDto activityDto){
         return activityRegistrationService.saveNewActivity(activityDto);
     }
 }

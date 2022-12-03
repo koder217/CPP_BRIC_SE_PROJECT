@@ -2,7 +2,12 @@ package edu.cpp.brcm.frontend.http;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import edu.cpp.brcm.frontend.ErrorUtil;
 import okhttp3.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -44,8 +49,29 @@ public class BrcmAPI {
                 .post(body)
                 .build();
         try (Response response = client.newCall(request).execute()) {
+            if(response.code() == 400){
+                var responseBody = response.body();
+                assert responseBody != null;
+                var jsonBody = responseBody.string();
+                Object obj = new JSONParser().parse(jsonBody);
+                JSONObject jo = (JSONObject) obj;
+                var errs= (JSONArray)jo.get("errors");
+                String errorStr = "";
+                for(var o : errs.stream().toList()){
+                    JSONObject errObj = (JSONObject) o;
+                    var msg = (String)errObj.get("defaultMessage");
+                    errorStr = errorStr+ msg +"\n";
+                }
+                ErrorUtil.showError(errorStr);
+                System.out.println(errorStr);
+            }
             var resp = Objects.requireNonNull(response.body()).string();
             return objectMapper.readValue(resp, valueType);
+        }catch (IOException ioException){
+            System.out.println(ioException.getMessage());
+            throw ioException;
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
         }
     }
 

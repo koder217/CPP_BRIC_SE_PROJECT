@@ -1,5 +1,7 @@
 package edu.cpp.brcm.dtos;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Positive;
 import java.io.Serializable;
 
 /**
@@ -7,7 +9,9 @@ import java.io.Serializable;
  */
 public class ActivityDto implements Serializable {
     private final Integer id;
+    @NotBlank(message = "Name is mandatory")
     private final String name;
+    @Positive(message = "Price must be positive")
     private final Double price;
 
     public ActivityDto(){

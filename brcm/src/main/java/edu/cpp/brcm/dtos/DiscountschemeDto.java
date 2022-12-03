@@ -1,5 +1,9 @@
 package edu.cpp.brcm.dtos;
 
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Positive;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -8,7 +12,10 @@ import java.time.LocalDate;
  */
 public class DiscountschemeDto implements Serializable {
     private final Integer id;
+    @Positive(message = "Price must be positive")
     private final Double pricediscount;
+    @Positive(message = "Percent must be positive")
+    @DecimalMax(value = "100.0", message = "Percent cannot exceed 100")
     private final Double percentdiscount;
     private final String customertype;
     private final LocalDate startdate;

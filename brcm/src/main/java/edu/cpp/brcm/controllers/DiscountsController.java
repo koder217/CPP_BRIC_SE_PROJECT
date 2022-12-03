@@ -5,6 +5,7 @@ import edu.cpp.brcm.services.DiscountManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -26,7 +27,7 @@ public class DiscountsController {
     }
 
     @PostMapping("/discounts")
-    public DiscountschemeDto postDiscount(@RequestBody DiscountschemeDto DiscountschemeDto){
+    public DiscountschemeDto postDiscount(@Valid @RequestBody DiscountschemeDto DiscountschemeDto){
         return discountManagementService.createDiscountScheme(DiscountschemeDto);
     }
 }

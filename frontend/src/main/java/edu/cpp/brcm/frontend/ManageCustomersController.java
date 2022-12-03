@@ -286,20 +286,24 @@ public class ManageCustomersController {
 
     private void btnSaveChanges_Clicked(ActionEvent actionEvent) {
         var customerType= choiceCustomerType.getValue();
-        if(customerType == "STUDENT"){
-            StudentDto sd = new StudentDto(0, dtEnter.getValue(), txtMajor.getText(), txtMinor.getText(), dtGrad.getValue(), getCustomerDtoFromForm());
-            try {
-                BrcmAPI.PostRequest(BrcmAPI.StudentsUrl, sd, StudentDto.class);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+        try {
+            if (customerType == "STUDENT") {
+                StudentDto sd = new StudentDto(0, dtEnter.getValue(), txtMajor.getText(), txtMinor.getText(), dtGrad.getValue(), getCustomerDtoFromForm());
+                try {
+                    BrcmAPI.PostRequest(BrcmAPI.StudentsUrl, sd, StudentDto.class);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                ProfessorDto pd = new ProfessorDto(0, txtDepartment.getText(), txtOffice.getText(), txtResearch.getText(), getCustomerDtoFromForm());
+                try {
+                    BrcmAPI.PostRequest(BrcmAPI.ProfessorsUrl, pd, ProfessorDto.class);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
-        }else{
-            ProfessorDto pd = new ProfessorDto(0, txtDepartment.getText(), txtOffice.getText(), txtResearch.getText(), getCustomerDtoFromForm());
-            try {
-                BrcmAPI.PostRequest(BrcmAPI.ProfessorsUrl, pd, ProfessorDto.class);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        }catch (NumberFormatException ex){
+            ErrorUtil.showError("Zip code must be a number");
         }
     }
 
@@ -386,7 +390,7 @@ public class ManageCustomersController {
         txtCity.setText(cd.getAddress().getCity());
         txtState.setText(cd.getAddress().getState());
     }
-    private AddressDto getAddressDtoFromForm(){
+    private AddressDto getAddressDtoFromForm() throws NumberFormatException{
         return new AddressDto(0,
                 txtStreet.getText(),
                 txtNumber.getText(),
@@ -394,7 +398,7 @@ public class ManageCustomersController {
                 txtCity.getText(),
                 txtState.getText());
     }
-    private CustomerDto getCustomerDtoFromForm(){
+    private CustomerDto getCustomerDtoFromForm() throws NumberFormatException{
         return new CustomerDto(0, txtFirstName.getText(), txtLastName.getText(),dtDob.getValue(), txtPhone.getText(), getAddressDtoFromForm());
     }
 
