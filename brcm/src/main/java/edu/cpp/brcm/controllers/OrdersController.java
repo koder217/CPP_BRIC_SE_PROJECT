@@ -5,6 +5,7 @@ import edu.cpp.brcm.dtos.StudentDto;
 import edu.cpp.brcm.dtos.VisitDto;
 import edu.cpp.brcm.services.OrderRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +21,8 @@ public class OrdersController {
     private OrderRegistrationService orderRegistrationService;
 
     @PostMapping("/orders")
-    public Map<String,String> postOrder(@RequestBody VisitDto visitDto){
-        int id = orderRegistrationService.createNewOrder(visitDto);
-        Map<String, String> response = new HashMap<>();
-        response.put("order", Integer.toString(id));
-        return response;
+    public ResponseEntity<OrderDto> postOrder(@RequestBody VisitDto visitDto){
+        var order = orderRegistrationService.createNewOrder(visitDto);
+        return ResponseEntity.ok(order);
     }
 }

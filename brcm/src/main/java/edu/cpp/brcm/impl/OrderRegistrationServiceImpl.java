@@ -59,9 +59,9 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService {
     }
 
     @Override
-    public Integer createNewOrder(VisitDto visitDto) {
+    public OrderDto createNewOrder(VisitDto visitDto) {
         if (visitDto == null || visitDto.lineItems == null || visitDto.lineItems.size() == 0)
-            return -1;
+            return null;
         Customer customer = null;
         if (visitDto.customerType == CustomerType.STUDENT) {
             var student = studentRepository.findById(visitDto.customerId).get();
@@ -76,19 +76,20 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService {
         o.setDate(LocalDate.now());
         o.setTime(LocalTime.now());
         o.setCustomerid(customer);
+        o.setDiscountapplied(0.0); //update after order is generated.
+        o.setTotalprice(0.0); //update after order is generated.
         var schemes = discountSchemeRepository.findAll();
         Discountscheme effectiveDiscountScheme = null;
         for (Discountscheme s : schemes) {
-            if (Objects.equals(s.getCustomertype(), CustomerType.PROFESSOR.name())) {
-                o.setDiscountschemeid(s);
-                effectiveDiscountScheme = s;
-            } else if (Objects.equals(s.getCustomertype(), CustomerType.STUDENT.name())) {
+            //TODO: also do a date check
+            if (Objects.equals(s.getCustomertype(), o.getCustomerType())) {
                 o.setDiscountschemeid(s);
                 effectiveDiscountScheme = s;
             }
         }
         o = orderRepository.save(o);
         List<LineitemDto> lineItems = visitDto.lineItems;
+        List<Lineitem> lineItemsEntities = new ArrayList<>();
         double totalPriceBeforeDiscount = 0.0;
         for (LineitemDto lineitemDto : lineItems) {
             //create appointment
@@ -96,6 +97,7 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService {
             Appointment a = Mapper.toEntity(appt);
             assert customer != null;
             a.setCustomerid(customer.getId());
+            a.setStatus("online-pending");
             a = appointmentRepository.save(a);
 
             //create lineitem
@@ -106,6 +108,7 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService {
             lt.setAppointmentid(a);
             lt.setOrderid(o);
             lt = lineItemRepository.save(lt);
+            lineItemsEntities.add(lt);
             totalPriceBeforeDiscount += act.getPrice() * lt.getQuantity();
         }
 
@@ -131,8 +134,8 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService {
             }
         }
         o.setTotalprice(effectiveTotalPriceAfterDiscount);
-        orderRepository.save(o);
-        return o.getId();
+        o = orderRepository.save(o);
+        return Mapper.toDTO(o, lineItemsEntities);
     }
 
     @Override

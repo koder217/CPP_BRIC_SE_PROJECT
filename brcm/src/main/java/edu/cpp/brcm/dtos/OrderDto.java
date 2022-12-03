@@ -56,8 +56,10 @@ public class OrderDto implements Serializable {
     public Double getDiscountapplied() {
         return discountapplied;
     }
-
     public Double getTotalprice() {
         return totalprice;
+    }
+    public List<LineitemDto> getLineitems(){
+        return lineitems;
     }
 }
