@@ -2,6 +2,7 @@ package edu.cpp.brcm.controllers;
 
 import edu.cpp.brcm.dtos.RevenueDto;
 import edu.cpp.brcm.services.RevenueReportService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
+@Tag(name = "Reports", description = "Get Report data")
 public class ReportsController {
     @Autowired
     private RevenueReportService revenueReportService;

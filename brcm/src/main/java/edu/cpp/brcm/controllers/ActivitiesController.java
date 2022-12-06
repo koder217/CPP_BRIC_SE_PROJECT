@@ -2,6 +2,7 @@ package edu.cpp.brcm.controllers;
 
 import edu.cpp.brcm.dtos.ActivityDto;
 import edu.cpp.brcm.services.ActivityRegistrationService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController("Activities")
 @RequestMapping("/api/v1")
+@Tag(name = "Activities", description = "CRUD for Activities")
 public class ActivitiesController {
     @Autowired
     private ActivityRegistrationService activityRegistrationService;

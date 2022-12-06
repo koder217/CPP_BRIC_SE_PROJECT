@@ -2,16 +2,16 @@ package edu.cpp.brcm.controllers;
 
 import edu.cpp.brcm.dtos.StudentDto;
 import edu.cpp.brcm.services.CustomerManagementService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
+@Tag(name = "Students", description = "CRUD for Students")
 @RequestMapping("/api/v1")
 public class StudentsController {
     @Autowired
@@ -25,6 +25,11 @@ public class StudentsController {
     public ResponseEntity<StudentDto> postStudents(@Valid @RequestBody StudentDto studentDto){
         StudentDto resp = customerManagementService.saveStudent(studentDto);
         return ResponseEntity.ok(resp);
+    }
+    @PutMapping("/students/{id}")
+    public ResponseEntity.BodyBuilder putStudents(@PathVariable(value = "id") int studentId, @Valid @RequestBody StudentDto studentDto){
+        customerManagementService.updateStudent(studentDto);
+        return ResponseEntity.ok();
     }
 
     @DeleteMapping("/students/{id}")
