@@ -6,6 +6,8 @@ import edu.cpp.brcm.entities.*;
 import edu.cpp.brcm.enums.CustomerType;
 import edu.cpp.brcm.repositories.*;
 import edu.cpp.brcm.services.OrderRegistrationService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
@@ -17,6 +19,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Service
 public class OrderRegistrationServiceImpl implements OrderRegistrationService {
     @Autowired
@@ -34,29 +38,29 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService {
     @Autowired
     private LineItemRepository lineItemRepository;
 
-    public AppointmentDto createNewAppointment(AppointmentDto appointmentDto) {
-        Appointment a = Mapper.toEntity(appointmentDto);
-        a = appointmentRepository.save(a);
-        return Mapper.toDTO(a);
-    }
-
-    public List<AppointmentDto> getAllAppointments() {
-        return appointmentRepository.findAll().stream().map(Mapper::toDTO).collect(Collectors.toList());
-    }
-
-    public void updateAppointment(AppointmentDto appointmentDto) {
-        Appointment a = appointmentRepository.findById(appointmentDto.getId()).orElseThrow(() -> new ResourceAccessException("Appointment not found for id:" + appointmentDto.getId()));
-        a.setStatus(appointmentDto.getStatus());
-        a.setStarttime(appointmentDto.getStarttime());
-        a.setEndtime(appointmentDto.getEndtime());
-        a.setActivityid(appointmentDto.getActivityid());
-        a.setCustomerid(appointmentDto.getCustomerid());
-        appointmentRepository.save(a);
-    }
-
-    public void deleteAppointment(int id) {
-        appointmentRepository.deleteById(id);
-    }
+//    public AppointmentDto createNewAppointment(AppointmentDto appointmentDto) {
+//        Appointment a = Mapper.toEntity(appointmentDto);
+//        a = appointmentRepository.save(a);
+//        return Mapper.toDTO(a);
+//    }
+//
+//    public List<AppointmentDto> getAllAppointments() {
+//        return appointmentRepository.findAll().stream().map(Mapper::toDTO).collect(Collectors.toList());
+//    }
+//
+//    public void updateAppointment(AppointmentDto appointmentDto) {
+//        Appointment a = appointmentRepository.findById(appointmentDto.getId()).orElseThrow(() -> new ResourceAccessException("Appointment not found for id:" + appointmentDto.getId()));
+//        a.setStatus(appointmentDto.getStatus());
+//        a.setStarttime(appointmentDto.getStarttime());
+//        a.setEndtime(appointmentDto.getEndtime());
+//        a.setActivityid(appointmentDto.getActivityid());
+//        a.setCustomerid(appointmentDto.getCustomerid());
+//        appointmentRepository.save(a);
+//    }
+//
+//    public void deleteAppointment(int id) {
+//        appointmentRepository.deleteById(id);
+//    }
 
     @Override
     public OrderDto createNewOrder(VisitDto visitDto) {

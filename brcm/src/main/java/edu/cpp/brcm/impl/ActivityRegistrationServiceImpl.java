@@ -7,6 +7,7 @@ import edu.cpp.brcm.entities.Historicalprice;
 import edu.cpp.brcm.repositories.ActivityRepository;
 import edu.cpp.brcm.repositories.PriceHistoryRepository;
 import edu.cpp.brcm.services.ActivityRegistrationService;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
@@ -15,7 +16,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@NoArgsConstructor
 @Service
 class ActivityRegistrationServiceImpl implements ActivityRegistrationService {
 
@@ -23,6 +24,11 @@ class ActivityRegistrationServiceImpl implements ActivityRegistrationService {
     private ActivityRepository activityRepository;
     @Autowired
     private PriceHistoryRepository priceHistoryRepository;
+
+    public ActivityRegistrationServiceImpl(ActivityRepository activityRepository, PriceHistoryRepository priceHistoryRepository){
+        this.activityRepository = activityRepository;
+        this.priceHistoryRepository = priceHistoryRepository;
+    }
     @Override
     public List<ActivityDto> getAllActivities() {
         return activityRepository.findAll().stream().map(Mapper::toDTO).collect(Collectors.toList());
